@@ -1,6 +1,8 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
+  "extends": "@zendenta/typescript-config/react-library.json",
   "compilerOptions": {
+   
+    "jsx": "react-jsx",
     "outDir": "dist"
   },
   "include": ["src"],

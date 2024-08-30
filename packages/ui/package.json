@@ -1,8 +1,9 @@
 {
-  "name": "@repo/ui",
+  "name": "@zendenta/ui",
   "version": "0.0.0",
   "private": true,
   "exports": {
+    "./tab": "./src/tab.tsx",
     "./button": "./src/button.tsx",
     "./card": "./src/card.tsx",
     "./code": "./src/code.tsx"
@@ -12,17 +13,22 @@
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
     "@turbo/gen": "^1.12.4",
-    "@types/node": "^20.11.24",
     "@types/eslint": "^8.56.5",
+    "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
+    "@repo/eslint-config": "workspace:*",
+    "@zendenta/typescript-config": "workspace:*",
+    "@zendenta/tailwind-config": "workspace:*",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "tsup": "^8.2.4"
   }
 }
