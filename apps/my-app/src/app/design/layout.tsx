@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={
-          inter.className +
+          " font-Manrope " +
           ` bg-lightbg text-black dark:bg-darkbg dark:text-white`
         }
       >
