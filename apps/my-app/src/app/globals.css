@@ -3,31 +3,53 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary: #405BE6;
+  --secondary: #61B1FF;
+  --warning: #F7BA21;
+  --warning-light: #FCE5C0;
+  --danger: #E45689;
+  --dangerlight: #ffb5d0;
+  --success: #47B889;
+  --success-light: #EBF8F2;
+  --background: #F9FBFD;
+  --highlight: #E9EFFA;
+  --text: #263444;
+  --white: #ffffff;
+  --nav-highlight: #E9EFFB;
+  --purple: #3D56E8;
+  --purplelight: #6078ff;
+
+
+
+  --rounded-10: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+.zenda-button {
+  all: unset;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--purple);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--rounded-10);
+  cursor: pointer;
+  touch-action: manipulation;
+  height: fit-content;
+  width: fit-content;
+  transition: all ease-in 216ms;
+}
+
+.zenda-button:hover {
+  background-color: var(--purplelight);
 }

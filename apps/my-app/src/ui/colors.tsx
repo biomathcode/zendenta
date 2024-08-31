@@ -1,0 +1,16 @@
+export const colors = {
+  primary: "#405BE6",
+  secondary: "#61B1FF",
+  warning: "#F7BA21",
+  warningLight: "#FCE5C0",
+  danger: "#E45689",
+  dangerlight: "#ffb5d0",
+  success: "#47B889",
+  successlight: "#EBF8F2",
+  background: "#F9FBFD",
+  highlight: "#E9EFFA",
+  text: "#263444",
+  white: "#ffffff",
+  "nav-highlight": "#E9EFFB",
+  purple: "#3D56E8",
+};

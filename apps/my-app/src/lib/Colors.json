@@ -1,0 +1,287 @@
+{
+  "id": "VariableCollectionId:4:15",
+  "name": "Colors",
+  "modes": { "4:0": "Mode 1" },
+  "variableIds": [
+    "VariableID:4:16",
+    "VariableID:4:17",
+    "VariableID:4:18",
+    "VariableID:4:19",
+    "VariableID:4:20",
+    "VariableID:4:21",
+    "VariableID:4:22",
+    "VariableID:4:23",
+    "VariableID:4:24",
+    "VariableID:4:25"
+  ],
+  "variables": [
+    {
+      "id": "VariableID:4:16",
+      "name": "Primary",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "4:0": {
+          "r": 0.250980406999588,
+          "g": 0.35686275362968445,
+          "b": 0.9019607901573181,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "4:0": {
+          "resolvedValue": {
+            "r": 0.250980406999588,
+            "g": 0.35686275362968445,
+            "b": 0.9019607901573181,
+            "a": 1
+          },
+          "alias": null
+        }
+      },
+      "scopes": ["ALL_SCOPES"],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:4:17",
+      "name": "Secondary",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "4:0": {
+          "r": 0.3803921639919281,
+          "g": 0.6941176652908325,
+          "b": 1,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "4:0": {
+          "resolvedValue": {
+            "r": 0.3803921639919281,
+            "g": 0.6941176652908325,
+            "b": 1,
+            "a": 1
+          },
+          "alias": null
+        }
+      },
+      "scopes": ["ALL_SCOPES"],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:4:18",
+      "name": "Warning",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "4:0": {
+          "r": 0.9686274528503418,
+          "g": 0.729411780834198,
+          "b": 0.12941177189350128,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "4:0": {
+          "resolvedValue": {
+            "r": 0.9686274528503418,
+            "g": 0.729411780834198,
+            "b": 0.12941177189350128,
+            "a": 1
+          },
+          "alias": null
+        }
+      },
+      "scopes": ["ALL_SCOPES"],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:4:19",
+      "name": "Danger",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "4:0": {
+          "r": 0.8941176533699036,
+          "g": 0.33725491166114807,
+          "b": 0.5372549295425415,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "4:0": {
+          "resolvedValue": {
+            "r": 0.8941176533699036,
+            "g": 0.33725491166114807,
+            "b": 0.5372549295425415,
+            "a": 1
+          },
+          "alias": null
+        }
+      },
+      "scopes": ["ALL_SCOPES"],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:4:20",
+      "name": "Success",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "4:0": {
+          "r": 0.27843138575553894,
+          "g": 0.7215686440467834,
+          "b": 0.5372549295425415,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "4:0": {
+          "resolvedValue": {
+            "r": 0.27843138575553894,
+            "g": 0.7215686440467834,
+            "b": 0.5372549295425415,
+            "a": 1
+          },
+          "alias": null
+        }
+      },
+      "scopes": ["ALL_SCOPES"],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:4:21",
+      "name": "background-100",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "4:0": {
+          "r": 0.9764705896377563,
+          "g": 0.9843137264251709,
+          "b": 0.9921568632125854,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "4:0": {
+          "resolvedValue": {
+            "r": 0.9764705896377563,
+            "g": 0.9843137264251709,
+            "b": 0.9921568632125854,
+            "a": 1
+          },
+          "alias": null
+        }
+      },
+      "scopes": ["ALL_SCOPES"],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:4:22",
+      "name": "highlight",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "4:0": {
+          "r": 0.9137254953384399,
+          "g": 0.9372549057006836,
+          "b": 0.9803921580314636,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "4:0": {
+          "resolvedValue": {
+            "r": 0.9137254953384399,
+            "g": 0.9372549057006836,
+            "b": 0.9803921580314636,
+            "a": 1
+          },
+          "alias": null
+        }
+      },
+      "scopes": ["ALL_SCOPES"],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:4:23",
+      "name": "text",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "4:0": {
+          "r": 0.14901961386203766,
+          "g": 0.20392157137393951,
+          "b": 0.2666666805744171,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "4:0": {
+          "resolvedValue": {
+            "r": 0.14901961386203766,
+            "g": 0.20392157137393951,
+            "b": 0.2666666805744171,
+            "a": 1
+          },
+          "alias": null
+        }
+      },
+      "scopes": ["ALL_SCOPES"],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:4:24",
+      "name": "text-200",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "4:0": {
+          "r": 0.1411764770746231,
+          "g": 0.20392157137393951,
+          "b": 0.2666666805744171,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "4:0": {
+          "resolvedValue": {
+            "r": 0.1411764770746231,
+            "g": 0.20392157137393951,
+            "b": 0.2666666805744171,
+            "a": 1
+          },
+          "alias": null
+        }
+      },
+      "scopes": ["ALL_SCOPES"],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:4:25",
+      "name": "Color",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": { "4:0": { "r": 1, "g": 1, "b": 1, "a": 1 } },
+      "resolvedValuesByMode": {
+        "4:0": {
+          "resolvedValue": { "r": 1, "g": 1, "b": 1, "a": 1 },
+          "alias": null
+        }
+      },
+      "scopes": ["ALL_SCOPES"],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    }
+  ]
+}
