@@ -1,9 +1,11 @@
 "use client";
 
+import { useNav } from "@/hooks/useNavOpen";
 import { PropsWithChildren, useState } from "react";
 
 function Nav({ children }: PropsWithChildren) {
-  const [width, setWidth] = useState("280px");
+  const { width, toggleNav } = useNav();
+
   return (
     <nav
       style={{
@@ -14,8 +16,7 @@ function Nav({ children }: PropsWithChildren) {
       {children}
       <button
         onClick={() => {
-          if (width === "280px") setWidth("80px");
-          else setWidth("280px");
+          toggleNav();
         }}
         className=" absolute -right-5 top-2 border-2 border-neutral-300 px-3 py-1 bg-white rounded-full text-lg"
       >

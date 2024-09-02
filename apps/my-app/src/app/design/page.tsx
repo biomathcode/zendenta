@@ -1,60 +1,43 @@
-import { routes } from "@/data/routes";
 import LinearGraph from "@/graph/linear";
 import Box from "@/ui/box";
 import Button from "@/ui/button";
 import Chip from "@/ui/chip";
-import ClinicDisplay from "@/ui/clinicDisplay";
 import { colors } from "@/ui/colors";
-import DentalChart from "@/ui/dentalchart";
 import Header from "@/ui/header";
-import { Dashboard } from "@/ui/icons";
 import Label from "@/ui/label";
-import Logo from "@/ui/logo";
-import Nav from "@/ui/nav";
-import NavItem from "@/ui/navitem";
-import ThemeSwitcher from "@/ui/themeToggle";
+
 import { TypographyDemo } from "@/ui/typography";
 import WorkingDays from "@/ui/workingdays";
+
+import NavGroup from "@/ui/navgroup";
+import { NavProvider } from "@/hooks/useNavOpen";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tab";
 
 function Design() {
   return (
     <div className="flex justify-center items-center min-w-full  ">
       <main className="flex w-full h-full">
-        <Nav>
-          <div className="flex flex-col gap-2 ">
-            <Logo />
-            <ClinicDisplay />
-            <NavItem icon="Dashboard" label="Dashboard" />
-            {routes.map((e) => {
-              return (
-                <div key={e.groupname} className="flex flex-col gap-2">
-                  <Label isCapital={true}>{e.groupname}</Label>
-                  <div className="flex flex-col ">
-                    {e.children.map((i) => (
-                      <li
-                        key={i.name}
-                        className="group flex gap-4 items-center hover:bg-[#E9EFFB] w-full p-2 rounded-xl"
-                      >
-                        {i.icon}
-                        <div className="font-semibold text-sm text-slate-700 group-hover:text-[#4B66E9]">
-                          {i.name}
-                        </div>
-                      </li>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-            <hr className=" w-full border-t-2 bg-slate-100 rounded " />
-            <NavItem icon="Report" label="Report" />
-            <NavItem icon="Customer Support" label="Customer Support" />
-          </div>
-        </Nav>
+        <NavProvider>
+          <NavGroup />
+        </NavProvider>
+
         <div className="h-full w-full flex flex-col ">
           <Header />
           <article className=" mx-auto max-w-screen-xl px-4 py-10 md:flex md:flex-row md:py-10 w-full h-[calc(100vh-60px)] ">
             <div className="flex flex-col gap-5">
               <LinearGraph />
+              <Tabs defaultValue="account" className="w-[400px]">
+                <TabsList>
+                  <TabsTrigger value="account">Account</TabsTrigger>
+                  <TabsTrigger value="password">Password</TabsTrigger>
+                </TabsList>
+                <TabsContent value="account">
+                  Make changes to your account here.
+                </TabsContent>
+                <TabsContent value="password">
+                  Change your password here.
+                </TabsContent>
+              </Tabs>
 
               <Label isCapital={true}>clinic</Label>
             </div>

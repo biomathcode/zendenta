@@ -1,5 +1,10 @@
 function SearchInput() {
-  return <input />;
+  return (
+    <div className="">
+      <span></span>
+      <input />
+    </div>
+  );
 }
 
 export default SearchInput;
