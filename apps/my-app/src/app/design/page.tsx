@@ -1,17 +1,15 @@
-import LinearGraph from "@/graph/linear";
 import Box from "@/ui/box";
 import Button from "@/ui/button";
 import Chip from "@/ui/chip";
 import { colors } from "@/ui/colors";
 import Header from "@/ui/header";
-import Label from "@/ui/label";
 
 import { TypographyDemo } from "@/ui/typography";
-import WorkingDays from "@/ui/workingdays";
+import { WorkingDays } from "@/ui/table.type";
 
 import NavGroup from "@/ui/navgroup";
 import { NavProvider } from "@/hooks/useNavOpen";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tab";
+import StockContainer from "@/screens/assert/assert.stocks";
 
 function Design() {
   return (
@@ -24,23 +22,7 @@ function Design() {
         <div className="h-full w-full flex flex-col ">
           <Header />
           <article className=" mx-auto max-w-screen-xl px-4 py-10 md:flex md:flex-row md:py-10 w-full h-[calc(100vh-60px)] ">
-            <div className="flex flex-col gap-5">
-              <LinearGraph />
-              <Tabs defaultValue="account" className="w-[400px]">
-                <TabsList>
-                  <TabsTrigger value="account">Account</TabsTrigger>
-                  <TabsTrigger value="password">Password</TabsTrigger>
-                </TabsList>
-                <TabsContent value="account">
-                  Make changes to your account here.
-                </TabsContent>
-                <TabsContent value="password">
-                  Change your password here.
-                </TabsContent>
-              </Tabs>
-
-              <Label isCapital={true}>clinic</Label>
-            </div>
+            <StockContainer />
           </article>
         </div>
       </main>

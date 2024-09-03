@@ -1,3 +1,6 @@
+// working days
+//
+
 function WorkingDays() {
   const days = ["s", "m", "t", "w", "t", "f", "s"];
 
@@ -17,4 +20,4 @@ function WorkingDays() {
   );
 }
 
-export default WorkingDays;
+export { WorkingDays };
