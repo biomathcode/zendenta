@@ -5,6 +5,11 @@ import Stats from "@/ui/stats";
 // props => color, icon, name, time, status => Registered, Encounter, Finished
 
 function calendarEventCard() {
+  // user
+  return <div className=""></div>;
+}
+
+function DoctorCard() {
   return <div className=""></div>;
 }
 
@@ -27,4 +32,4 @@ function SalesCard({
   );
 }
 
-export { calendarEventCard, SalesCard };
+export { calendarEventCard, SalesCard, DoctorCard };

@@ -20,6 +20,16 @@
 // 15. Invoice
 // 16.
 
+// design of dialog
+// with header not header
+// dismissable not dimissable
+// Create an stack of dialogs
+// action button at the bottom
+// Sidebar
+// Multi-Step form
+// Dialog Components like breadcumb
+//
+
 "use client";
 
 import { Drawer } from "vaul";

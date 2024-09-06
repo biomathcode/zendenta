@@ -1,3 +1,4 @@
+import { BarGraph } from "@/graph/bar";
 import Hr from "@/ui/hr";
 import Label from "@/ui/label";
 import UserGreeting from "@/ui/salutation";
@@ -58,6 +59,7 @@ function IncomeExpenseGraph() {
           </div>
         </div>
       </div>
+      <BarGraph />
     </div>
   );
 }
