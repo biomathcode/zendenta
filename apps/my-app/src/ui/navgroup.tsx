@@ -7,6 +7,7 @@ import ClinicDisplay from "./clinicDisplay";
 import { routes } from "@/data/routes";
 import Label from "./label";
 import { useNav } from "@/hooks/useNavOpen";
+import Link from "next/link";
 
 function NavGroup() {
   const { width } = useNav();
@@ -25,7 +26,8 @@ function NavGroup() {
 
               <div className="flex flex-col ">
                 {e.children.map((i) => (
-                  <li
+                  <Link
+                    href={i.href}
                     key={i.name}
                     className="group flex gap-4 items-center hover:bg-[#E9EFFB] w-full p-2 rounded-xl"
                   >
@@ -35,7 +37,7 @@ function NavGroup() {
                         {i.name}
                       </div>
                     )}
-                  </li>
+                  </Link>
                 ))}
               </div>
             </div>

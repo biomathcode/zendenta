@@ -34,7 +34,7 @@ function StockContainer() {
           <TabsTrigger value="Order Stock">Order Stock</TabsTrigger>
         </TabsList>
         <TabsContent
-          className=" relative before:absolute before:w-full before:border-t before:top-0 "
+          className=" relative before:absolute before:w-full  "
           value="Inventory"
         >
           This is the inventory

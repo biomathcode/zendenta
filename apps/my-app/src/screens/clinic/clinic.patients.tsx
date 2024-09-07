@@ -26,7 +26,7 @@ function StaffListContainer() {
           <TabsTrigger value="inactive">Inactive Patients</TabsTrigger>
         </TabsList>
         <TabsContent
-          className=" relative before:absolute before:w-full before:border-t before:top-0 "
+          className=" relative before:absolute before:w-full "
           value="active"
         >
           TODO: Add Table with filter and Search

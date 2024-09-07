@@ -31,7 +31,7 @@ function SalesContainer() {
           <TabsTrigger value="Payment">Payment Received</TabsTrigger>
         </TabsList>
         <TabsContent
-          className=" relative before:absolute before:w-full before:border-t before:top-0 "
+          className=" relative before:absolute before:w-full"
           value="Bill"
         >
           TODO: Add table here
