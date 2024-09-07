@@ -1,4 +1,7 @@
+"use client";
+import { WeekView } from "@/ui/calendart";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/ui/tab";
+import { today, getLocalTimeZone } from "@internationalized/date";
 
 function ClinicReservation() {
   return (
@@ -11,10 +14,10 @@ function ClinicReservation() {
           <TabsTrigger value="Log History">Log History</TabsTrigger>
         </TabsList>
         <TabsContent
-          className=" relative before:absolute before:w-full "
+          className=" relative before:absolute before:w-full max-h-full overflow-scroll "
           value="Calendar"
         >
-          TODO: Add table here
+          <WeekView defaultValue={today(getLocalTimeZone())} />
         </TabsContent>
         <TabsContent value="Log History">Log History</TabsContent>
       </Tabs>

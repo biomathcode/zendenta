@@ -1,5 +1,8 @@
 - [ ] Setup Tailwind
 - [ ] Setup Storybook 
+- [ ] Add Calendar View
+- [ ] Create Stackable Dialogs
+- [ ] 
 
 ### Objective of the Projects
 - [ ] Dental Clinic management
@@ -10,6 +13,7 @@
 - [ ] Collecting Patient details
 - [ ] Payment Methods
 - [ ] Medical Stocks
+- [ ] 
 
 
 ### How would a dental service work? 
