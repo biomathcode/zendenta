@@ -10,6 +10,7 @@ import { WorkingDays } from "@/ui/table.type";
 import NavGroup from "@/ui/navgroup";
 import { NavProvider } from "@/hooks/useNavOpen";
 import ClinicReservation from "@/screens/clinic/clinic.reservation";
+import StockContainer from "@/screens/assert/assert.stocks";
 
 function Design() {
   return (
@@ -22,7 +23,7 @@ function Design() {
         <div className="h-full w-full flex flex-col ">
           <Header type="Stocks" />
           <article className=" font-Manrope mx-auto max-w-screen-xl px-4  md:flex md:flex-row  w-full h-[calc(100vh-60px)] ">
-            <ClinicReservation />
+            <StockContainer />
           </article>
         </div>
       </main>

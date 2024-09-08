@@ -8,9 +8,15 @@ import { routes } from "@/data/routes";
 import Label from "./label";
 import { useNav } from "@/hooks/useNavOpen";
 import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
 
 function NavGroup() {
   const { width } = useNav();
+  const params = usePathname();
+
+  let path = params.slice(1);
+  console.log(params, path);
+
   return (
     <Nav>
       <div className="flex flex-col gap-2 ">
@@ -29,11 +35,22 @@ function NavGroup() {
                   <Link
                     href={i.href}
                     key={i.name}
-                    className="group flex gap-4 items-center hover:bg-[#E9EFFB] w-full p-2 rounded-xl"
+                    className={`group flex gap-4 items-center hover:bg-[#E9EFFB] w-full p-2 rounded-xl  ${
+                      path === i.href ? " bg-blue-600" : ""
+                    } `}
                   >
-                    {i.icon}
+                    <span
+                      className={`${path === i.href ? " text-neutral-50 " : ""}`}
+                    >
+                      {i.icon}
+                    </span>
+
                     {width === "280px" && (
-                      <div className="font-semibold text-sm text-slate-700 group-hover:text-[#4B66E9]">
+                      <div
+                        className={`font-semibold text-sm text-slate-700 group-hover:text-[#4B66E9]  ${
+                          path === i.href ? " text-neutral-50 " : ""
+                        } `}
+                      >
                         {i.name}
                       </div>
                     )}
