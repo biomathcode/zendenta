@@ -8,7 +8,7 @@ import Stats from "@/ui/stats";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tab";
 import { BiDollarCircle } from "react-icons/bi";
 
-function StaffListContainer() {
+function PatientsContainer() {
   return (
     <div className="flex flex-col gap-5 w-full h-full">
       <Spacer direction="vertical" size="large" />
@@ -17,8 +17,6 @@ function StaffListContainer() {
         defaultValue="active"
         className="relative w-full h-full bg-neutral-200"
       >
-        <div className="absolute w-full top-40 left-8 bg-slate-800  h-4"></div>
-
         <TabsList className=" flex justify-start w-full border-b">
           <TabsTrigger className="" value="active">
             Active Patients
@@ -37,4 +35,4 @@ function StaffListContainer() {
   );
 }
 
-export default StaffListContainer;
+export default PatientsContainer;

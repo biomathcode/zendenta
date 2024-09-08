@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 import { BiChevronDown, BiQuestionMark } from "react-icons/bi";
 import { BsGearWideConnected } from "react-icons/bs";
 import { CiWavePulse1 } from "react-icons/ci";
@@ -46,10 +46,29 @@ const routes = [
   "Peripherals",
 ];
 
-function Header({ children }: PropsWithChildren) {
+type RouteType = (typeof routes)[number];
+
+function Header({
+  type,
+}: {
+  type:
+    | "Dashboard"
+    | "Reservations"
+    | "Patients"
+    | "Treatments"
+    | "StaffList"
+    | "Account"
+    | "Sales"
+    | "Purchase"
+    | "Payment Methods"
+    | "Stocks"
+    | "Peripherals"
+    | "Report"
+    | "Support";
+}) {
   return (
     <header className=" border-b-[1px] border-neutral-300 h-[60px] py-4 px-8 bg-white w-full flex gap-4 justify-between ">
-      <h1 className=" text-xl font-semibold text-slate-700">Reservations</h1>
+      <h1 className=" text-xl font-semibold text-slate-700">{type}</h1>
       <div className=" flex gap-8 justify-evenly">
         <form className="flex gap-2 items-center justify-center">
           <label className="relative">
@@ -88,7 +107,6 @@ function Header({ children }: PropsWithChildren) {
         <Hr direction="vertical" size="xs" />
         <AvatarCard />
       </div>
-      {children}
     </header>
   );
 }

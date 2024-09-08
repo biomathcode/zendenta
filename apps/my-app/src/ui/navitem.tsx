@@ -19,7 +19,7 @@ function NavItem({
   };
   return (
     <Link
-      href={label.toLowerCase()}
+      href={label.replace(/\s+/g, "").toLowerCase()}
       className="group flex gap-4 items-center hover:bg-[#E9EFFB] w-full p-2 rounded-xl"
     >
       {iconData[icon]}

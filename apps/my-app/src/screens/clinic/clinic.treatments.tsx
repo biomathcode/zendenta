@@ -17,8 +17,6 @@ function TreatmentsContainer() {
         defaultValue="active"
         className="relative w-full h-full bg-neutral-200"
       >
-        <div className="absolute w-full top-40 left-8 bg-slate-800  h-4"></div>
-
         <TabsList className=" flex justify-start w-full border-b">
           <TabsTrigger className="" value="active">
             Active Treatment

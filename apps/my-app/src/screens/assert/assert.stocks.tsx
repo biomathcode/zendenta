@@ -1,16 +1,14 @@
 import LinearGraph from "@/graph/linear";
 import { SalesCard } from "@/ui/card";
 import Hr from "@/ui/hr";
-import Label from "@/ui/label";
 import Spacer from "@/ui/spacer";
-import Stats from "@/ui/stats";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tab";
-import { BiDollarCircle } from "react-icons/bi";
+import { TableContainer } from "@/ui/table.type";
 
 function StockContainer() {
   return (
-    <div className="flex flex-col gap-5 w-full h-full">
+    <div className="flex flex-col gap-2 w-full h-full">
       <div className="flex gap-4 min-h-fit">
         <SalesCard />
         <Spacer direction="horizontal" size="large" />
@@ -21,12 +19,7 @@ function StockContainer() {
       </div>
       <Spacer direction="vertical" size="large" />
 
-      <Tabs
-        defaultValue="Order Stock"
-        className="relative w-full h-full bg-neutral-200"
-      >
-        <div className="absolute w-full top-40 left-8 bg-slate-800  h-4"></div>
-
+      <Tabs defaultValue="Inventory" className="relative w-full h-full">
         <TabsList className=" flex justify-start w-full border-b">
           <TabsTrigger className="" value="Inventory">
             Inventory
@@ -37,7 +30,7 @@ function StockContainer() {
           className=" relative before:absolute before:w-full  "
           value="Inventory"
         >
-          This is the inventory
+          <TableContainer />
         </TabsContent>
         <TabsContent value="Order Stock">
           Change your password here.

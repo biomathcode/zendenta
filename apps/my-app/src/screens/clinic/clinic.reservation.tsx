@@ -17,7 +17,7 @@ function ClinicReservation() {
           className=" relative before:absolute before:w-full max-h-full overflow-scroll "
           value="Calendar"
         >
-          <WeekView defaultValue={today(getLocalTimeZone())} />
+          {/* <WeekView defaultValue={today(getLocalTimeZone())} /> */}
         </TabsContent>
         <TabsContent value="Log History">Log History</TabsContent>
       </Tabs>

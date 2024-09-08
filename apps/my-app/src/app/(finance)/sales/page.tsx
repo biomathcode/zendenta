@@ -9,10 +9,10 @@ import { WorkingDays } from "@/ui/table.type";
 
 import NavGroup from "@/ui/navgroup";
 import { NavProvider } from "@/hooks/useNavOpen";
-import StockContainer from "@/screens/assert/assert.stocks";
-import DashboardContainer from "@/screens/dashboard";
+import ClinicReservation from "@/screens/clinic/clinic.reservation";
+import SalesContainer from "@/screens/finance/finance.sales";
 
-function Design() {
+function Sales() {
   return (
     <div className="flex justify-center items-center min-w-full  ">
       <main className="flex w-full h-full">
@@ -21,9 +21,9 @@ function Design() {
         </NavProvider>
 
         <div className="h-full w-full flex flex-col ">
-          <Header />
-          <article className=" font-Manrope mx-auto max-w-screen-xl px-4 py-8 md:flex md:flex-row md:py-10 w-full h-[calc(100vh-60px)] ">
-            <DashboardContainer />
+          <Header type="Sales" />
+          <article className=" font-Manrope mx-auto max-w-screen-xl px-4  md:flex md:flex-row  w-full h-[calc(100vh-60px)] ">
+            <SalesContainer />
           </article>
         </div>
       </main>
@@ -53,4 +53,4 @@ function Tokens() {
   );
 }
 
-export default Design;
+export default Sales;

@@ -20,8 +20,8 @@ function Design() {
         </NavProvider>
 
         <div className="h-full w-full flex flex-col ">
-          <Header />
-          <article className=" mx-auto max-w-screen-xl px-4 py-10 md:flex md:flex-row md:py-10 w-full h-[calc(100vh-60px)] ">
+          <Header type="Dashboard" />
+          <article className=" mx-auto max-w-screen-xl px-4 py-4 md:flex md:flex-row md:py-4 w-full h-[calc(100vh-60px)] ">
             <StockContainer />
           </article>
         </div>

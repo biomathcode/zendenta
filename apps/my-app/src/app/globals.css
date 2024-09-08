@@ -76,15 +76,7 @@
 }
 
 /*--- Calendar ---*/
-ul,
-li,
-td {
-  all: unset;
-}
 
-td {
-  display: flex;
-}
 
 .App {
   font-family: sans-serif;
@@ -208,13 +200,7 @@ td {
 .col {
   flex-direction: column;
 }
-hr {
-  width: 40px;
-  height: 4px;
-  border: none;
-  border-radius: 4px;
-  background: var(--grid-color);
-}
+
 .timer {
   position: absolute;
   top: -12px;
@@ -226,4 +212,32 @@ hr {
   color: #444;
 
   border-radius: 4px;
+}
+
+
+/** Table **/
+
+
+
+table {
+  border: 1px solid lightgray;
+}
+
+tbody {
+  border-bottom: 1px solid lightgray;
+}
+
+th {
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  padding: 2px 4px;
+}
+
+
+tfoot {
+  color: gray;
+}
+
+tfoot th {
+  font-weight: normal;
 }
