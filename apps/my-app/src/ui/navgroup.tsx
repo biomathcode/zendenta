@@ -2,13 +2,12 @@
 import Logo from "@/ui/logo";
 import Nav from "@/ui/nav";
 import NavItem from "@/ui/navitem";
-import ThemeSwitcher from "@/ui/themeToggle";
 import ClinicDisplay from "./clinicDisplay";
 import { routes } from "@/data/routes";
 import Label from "./label";
 import { useNav } from "@/hooks/useNavOpen";
 import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 function NavGroup() {
   const { width } = useNav();
@@ -35,7 +34,7 @@ function NavGroup() {
                   <Link
                     href={i.href}
                     key={i.name}
-                    className={`group flex gap-4 items-center hover:bg-[#E9EFFB] w-full p-2 rounded-xl  ${
+                    className={`group flex transition-all ease-in duration-300 gap-4 items-center hover:bg-[#E9EFFB] w-full p-2 rounded-xl  ${
                       path === i.href ? " bg-blue-600" : ""
                     } `}
                   >
@@ -47,8 +46,8 @@ function NavGroup() {
 
                     {width === "280px" && (
                       <div
-                        className={`font-semibold text-sm text-slate-700 group-hover:text-[#4B66E9]  ${
-                          path === i.href ? " text-neutral-50 " : ""
+                        className={`font-semibold  text-sm text-slate-700 group-hover:text-[#4B66E9]  ${
+                          path === i.href ? " text-white " : ""
                         } `}
                       >
                         {i.name}

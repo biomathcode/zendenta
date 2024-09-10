@@ -84,7 +84,7 @@ function MyDialog({
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />
         <Drawer.Content
           autoFocus
-          className={`flex flex-col transition-all ease-in duration-300 justify-center rounded-t-[10px] h-full w-[500px] mt-24 fixed bottom-0  ${
+          className={`flex flex-col focus:transition-all focus:duration-300 transition-all ease-in duration-300 justify-center rounded-t-[10px] h-full w-[500px] mt-24 fixed bottom-0  ${
             isNested ? " right-44" : " -right-96 focus:right-4"
           }`}
         >
