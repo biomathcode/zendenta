@@ -13,6 +13,7 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as counter_table from "../counter_table.js";
 import type * as messages from "../messages.js";
 import type * as tasks from "../tasks.js";
 
@@ -25,6 +26,7 @@ import type * as tasks from "../tasks.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  counter_table: typeof counter_table;
   messages: typeof messages;
   tasks: typeof tasks;
 }>;

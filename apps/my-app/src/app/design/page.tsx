@@ -1,3 +1,4 @@
+"use client";
 import Box from "@/ui/box";
 import Button from "@/ui/button";
 import Chip from "@/ui/chip";
@@ -22,7 +23,16 @@ function Design() {
         <div className="h-full w-full flex flex-col ">
           <Header type="Dashboard" />
           <article className=" mx-auto max-w-screen-xl px-4 py-4 md:flex md:flex-row md:py-4 w-full h-[calc(100vh-60px)] ">
-            <StockContainer />
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+            >
+              <input type="file" accept=".png" />
+              <button type="submit">Upload File</button>
+            </form>
+
+            {/* <StockContainer /> */}
           </article>
         </div>
       </main>

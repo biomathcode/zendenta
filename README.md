@@ -1,3 +1,16 @@
+### Why Sass for dental Clinics
+India boasts the second-highest number of dentists globally, in fact, India exceeds the WHO’s recommended dentist-to-population ratio of 1:1700 by a significant margin
+
+
+
+The global dental market size was valued at USD 35.40 billion in 2023 and market is projected to grow from USD 38.95 billion in 2024 to USD 95.37 billion by 2032, exhibiting a CAGR of 11.8% during the forecast period (2024-2032). North America dominated the global market with a share of 38.81% in 2023 (https://www.fortunebusinessinsights.com/dental-market-106251)
+
+What is the reason behind the increasing dental tourism in India?
+
+A report by Insights10 reveals that India’s dental care market was valued at $653 Mn in 2022 and is estimated to expand at a compound annual growth rate (CAGR) of 9.40% from 2022 to 2030 and will reach $1339 Mn in 2030.
+
+
+
 # Turborepo starter
 
 This is an official starter Turborepo.

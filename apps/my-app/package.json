@@ -26,6 +26,8 @@
     "@tanstack/react-table": "^8.20.5",
     "clsx": "^2.1.1",
     "convex": "^1.15.0",
+    "convex-ents": "^0.11.0",
+    "convex-helpers": "^0.1.56",
     "date-fns": "^3.6.0",
     "next": "14.2.7",
     "next-themes": "^0.3.0",

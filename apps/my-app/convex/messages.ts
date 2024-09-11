@@ -13,34 +13,10 @@ export const list = query(async (ctx) => {
   return await ctx.db.query("messages").collect();
 });
 
-export const increment = mutation(
-  async ({ db }, { counterName }: { counterName: string }) => {
-    const counterDoc = await db
-      .query("counter_table")
-      .filter((q) => q.eq(q.field("name"), counterName))
-      .first();
-    const incrementBy = 1;
-    if (counterDoc === null) {
-      await db.insert("counter_table", {
-        name: counterName,
-        counter: incrementBy,
-      });
-      // console.log messages appear in your browser's console and the Convex dashboard.
-      console.log("Created counter.");
-    } else {
-      counterDoc.counter += incrementBy;
-      await db.replace(counterDoc._id, counterDoc);
-      console.log(
-        `Value of counter ${counterName} is now ${counterDoc.counter}.`
-      );
-    }
-  }
-);
-
 export const send = mutation({
-  args: { body: v.string(), author: v.string() },
-  handler: async (ctx, { body, author }) => {
-    const message = { body, author };
+  args: { body: v.string(), author: v.string(), format: v.string() },
+  handler: async (ctx, { body, author, format }) => {
+    const message = { body, author, format };
     await ctx.db.insert("messages", message);
   },
 });

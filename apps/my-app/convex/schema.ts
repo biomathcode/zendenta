@@ -6,6 +6,7 @@ export default defineSchema({
   messages: defineTable({
     author: v.string(),
     body: v.string(),
+    format: v.string(),
   }),
   likes: defineTable({
     liker: v.string(),
@@ -46,6 +47,11 @@ export default defineSchema({
       v.literal("OUT OF STOCK")
     ),
     assertValue: v.number(), // in dollars
+  }),
+
+  counter_table: defineTable({
+    name: v.string(),
+    counter: v.number(),
   }),
 
   ...authTables,
