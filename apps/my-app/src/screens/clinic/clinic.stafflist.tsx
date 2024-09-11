@@ -11,12 +11,7 @@ import { BiDollarCircle } from "react-icons/bi";
 function StaffListContainer() {
   return (
     <div className="flex flex-col gap-5 w-full h-full">
-      <Spacer direction="vertical" size="large" />
-
-      <Tabs
-        defaultValue="Doctor"
-        className="relative w-full h-full bg-neutral-200"
-      >
+      <Tabs defaultValue="Doctor" className="relative w-full h-full">
         <TabsList className=" flex justify-start w-full border-b">
           <TabsTrigger className="" value="Doctor">
             Doctor Staff

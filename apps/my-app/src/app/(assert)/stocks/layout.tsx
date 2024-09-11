@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../../globals.css";
 import { ConvexClientProvider } from "@/lib/ConvexClientProvider";
+import Header from "@/ui/header";
+import { NavProvider } from "@/hooks/useNavOpen";
+import NavGroup from "@/ui/navgroup";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +21,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ConvexClientProvider>{children}</ConvexClientProvider>
+        <ConvexClientProvider>
+          <div className="flex justify-center items-center min-w-full  ">
+            <main className="flex w-full h-full">
+              <NavProvider>
+                <NavGroup />
+              </NavProvider>
+
+              <div className="h-full w-full flex flex-col ">
+                <Header type="Stocks" />
+                <article className=" font-Manrope mx-auto max-w-screen-xl px-4  md:flex md:flex-row  w-full h-[calc(100vh-60px)] ">
+                  {children}
+                </article>
+              </div>
+            </main>
+          </div>
+        </ConvexClientProvider>
       </body>
     </html>
   );

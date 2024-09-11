@@ -37,6 +37,24 @@
 import { ReactNode, useState } from "react";
 import { Drawer } from "vaul";
 
+function MedicalCheckup() {
+  return (
+    <div className="p-4 bg-white rounded-3xl flex-1 max-h-[94%]">
+      <div className="max-w-md mx-auto">
+        <Drawer.Title className="font-medium mb-4">
+          Unstyled drawer for React.
+        </Drawer.Title>
+      </div>
+    </div>
+  );
+}
+
+// what should idea props
+// isheader,
+// title,
+// multistep,
+//
+
 function MyDialog({
   isNested = false,
   children = <button name="drawerbutton">Open Drawer</button>,
@@ -44,7 +62,7 @@ function MyDialog({
     <div className="p-4 bg-white rounded-3xl flex-1 max-h-[94%]">
       <div className="max-w-md mx-auto">
         <Drawer.Title className="font-medium mb-4">
-          Unstyled drawer for React.
+          Medical Checkup
         </Drawer.Title>
         <p className="text-zinc-600 mb-2">
           This component can be used as a replacement for a Dialog on mobile and

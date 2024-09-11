@@ -11,12 +11,7 @@ import { BiDollarCircle } from "react-icons/bi";
 function TreatmentsContainer() {
   return (
     <div className="flex flex-col gap-5 w-full h-full">
-      <Spacer direction="vertical" size="large" />
-
-      <Tabs
-        defaultValue="active"
-        className="relative w-full h-full bg-neutral-200"
-      >
+      <Tabs defaultValue="active" className="relative w-full h-full ">
         <TabsList className=" flex justify-start w-full border-b">
           <TabsTrigger className="" value="active">
             Active Treatment

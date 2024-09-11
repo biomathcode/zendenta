@@ -3,9 +3,14 @@ import React from "react";
 type HrProps = {
   size?: "xs" | "sm" | "md" | "lg" | "full" | "fit"; // Define size options
   direction?: "horizontal" | "vertical"; // Define direction options
+  className?: string;
 };
 
-const Hr: React.FC<HrProps> = ({ size = "md", direction = "horizontal" }) => {
+const Hr: React.FC<HrProps> = ({
+  size = "md",
+  direction = "horizontal",
+  className,
+}) => {
   // Tailwind CSS classes for size variations
   const sizeClasses = {
     fit: direction === "horizontal" ? "h-px w-fit" : "w-px h-fit",
@@ -17,7 +22,7 @@ const Hr: React.FC<HrProps> = ({ size = "md", direction = "horizontal" }) => {
     full: direction === "horizontal" ? "h-px w-full" : "w-px h-full",
   };
 
-  return <div className={`bg-gray-300 ${sizeClasses[size]}`} />;
+  return <div className={`bg-gray-300 ${sizeClasses[size]} ${className}`} />;
 };
 
 export default Hr;
