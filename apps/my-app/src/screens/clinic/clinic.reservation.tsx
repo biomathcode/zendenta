@@ -151,7 +151,7 @@ function ClinicReservation() {
           <TabsTrigger value="Log History">Log History</TabsTrigger>
         </TabsList>
         <TabsContent
-          className=" relative   overflow-scroll "
+          className=" relative overflow-scroll "
           style={{
             maxHeight: "calc(100vh - 100px)",
           }}
@@ -194,8 +194,9 @@ function ClinicReservation() {
               </button>
             </div>
           </div>
-          <div className="flex  w-full h-full">
+          <div className="flex  w-full h-full  overflow-scroll">
             <DayView />
+            <DoctorView />
             <DoctorView />
           </div>
           {/* <WeekView defaultValue={today(getLocalTimeZone())} /> */}
