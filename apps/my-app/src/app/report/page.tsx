@@ -10,23 +10,18 @@ import { WorkingDays } from "@/ui/table.type";
 import NavGroup from "@/ui/navgroup";
 import { NavProvider } from "@/hooks/useNavOpen";
 import DashboardContainer from "@/screens/dashboard";
+import RootLayout from "../dashboard/layout";
 
 function Design() {
   return (
-    <div className="flex justify-center items-center min-w-full  ">
-      <main className="flex w-full h-full">
-        <NavProvider>
-          <NavGroup />
-        </NavProvider>
-
-        <div className="h-full w-full flex flex-col ">
-          <Header type="Report" />
-          <article className=" font-Manrope mx-auto max-w-screen-xl px-4 py-8 md:flex md:flex-row md:py-10 w-full h-[calc(100vh-60px)] ">
-            <DashboardContainer />
-          </article>
-        </div>
-      </main>
-    </div>
+    <RootLayout>
+      <div className="h-full w-full flex flex-col ">
+        <Header type="Report" />
+        <article className=" font-Manrope mx-auto max-w-screen-xl px-4 py-8 md:flex md:flex-row md:py-10 w-full h-[calc(100vh-60px)] ">
+          <DashboardContainer />
+        </article>
+      </div>
+    </RootLayout>
   );
 }
 

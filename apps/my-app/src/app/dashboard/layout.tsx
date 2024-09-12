@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { ConvexClientProvider } from "@/lib/ConvexClientProvider";
+import { NavProvider } from "@/hooks/useNavOpen";
+import NavGroup from "@/ui/navgroup";
 
 export const metadata: Metadata = {
   title: "Denta Clinic Management System",
@@ -15,7 +17,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ConvexClientProvider>{children}</ConvexClientProvider>
+        <ConvexClientProvider>
+          <div className="flex justify-center items-center min-w-full  ">
+            <main className="flex w-full h-full">
+              <NavProvider>
+                <NavGroup />
+              </NavProvider>
+              {children}
+            </main>
+          </div>
+        </ConvexClientProvider>
       </body>
     </html>
   );

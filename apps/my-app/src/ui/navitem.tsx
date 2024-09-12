@@ -25,7 +25,7 @@ function NavItem({
   return (
     <Link
       href={label.replace(/\s+/g, "").toLowerCase()}
-      className={`transition-all ease-in duration-200 group flex gap-4 items-center hover:bg-[#E9EFFB] w-full p-2 rounded-xl ${
+      className={` group flex gap-4 items-center hover:bg-[#E9EFFB] w-full p-2 rounded-xl ${
         path === label.replace(/\s+/g, "").toLowerCase() ? " bg-blue-600" : ""
       } `}
     >

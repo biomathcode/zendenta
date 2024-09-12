@@ -11,6 +11,7 @@ import NavGroup from "@/ui/navgroup";
 import { NavProvider } from "@/hooks/useNavOpen";
 import ClinicReservation from "@/screens/clinic/clinic.reservation";
 import StockContainer from "@/screens/assert/assert.stocks";
+import RootLayout from "@/app/dashboard/layout";
 
 function Page() {
   return <StockContainer />;

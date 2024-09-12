@@ -63,3 +63,8 @@ Now Comming to payments and finance of a clinic. A patients would pay for the tr
 - [ ] Add authentication email and password
 - [ ] Create Schema design for the tables
 - [ ] 
+
+### 
+
+
+

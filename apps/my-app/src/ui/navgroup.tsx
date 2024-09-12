@@ -34,7 +34,7 @@ function NavGroup() {
                   <Link
                     href={i.href}
                     key={i.name}
-                    className={`group flex transition-all ease-in duration-300 gap-4 items-center hover:bg-[#E9EFFB] w-full p-2 rounded-xl  ${
+                    className={`group flex  gap-4 items-center hover:bg-[#E9EFFB] w-full p-2 rounded-xl  ${
                       path === i.href ? " bg-blue-600" : ""
                     } `}
                   >

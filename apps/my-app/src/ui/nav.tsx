@@ -18,7 +18,7 @@ function Nav({ children }: PropsWithChildren) {
       style={{
         width,
       }}
-      className=" relative rounded-l-[3.5rem] px-4  transition-all ease-in duration-200  h-screen bg-[#f9fafb] "
+      className=" relative rounded-l-[3.5rem] px-4  transition-transform ease-in duration-300 h-screen bg-[#f9fafb] "
     >
       {children}
       <button

@@ -11,23 +11,18 @@ import NavGroup from "@/ui/navgroup";
 import { NavProvider } from "@/hooks/useNavOpen";
 import ClinicReservation from "@/screens/clinic/clinic.reservation";
 import StaffListContainer from "@/screens/clinic/clinic.stafflist";
+import RootLayout from "@/app/dashboard/layout";
 
 function Design() {
   return (
-    <div className="flex justify-center items-center min-w-full  ">
-      <main className="flex w-full h-full">
-        <NavProvider>
-          <NavGroup />
-        </NavProvider>
-
-        <div className="h-full w-full flex flex-col ">
-          <Header type="StaffList" />
-          <article className=" font-Manrope mx-auto max-w-screen-xl px-4  md:flex md:flex-row  w-full h-[calc(100vh-60px)] ">
-            <StaffListContainer />
-          </article>
-        </div>
-      </main>
-    </div>
+    <RootLayout>
+      <div className="h-full w-full flex flex-col ">
+        <Header type="StaffList" />
+        <article className=" font-Manrope mx-auto max-w-screen-xl px-4  md:flex md:flex-row  w-full h-[calc(100vh-60px)] ">
+          <StaffListContainer />
+        </article>
+      </div>
+    </RootLayout>
   );
 }
 
