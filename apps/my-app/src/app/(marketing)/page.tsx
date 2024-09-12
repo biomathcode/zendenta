@@ -16,7 +16,7 @@ import { FaTooth } from "react-icons/fa";
 import { BsCalendarEvent, BsFileText } from "react-icons/bs";
 import { FaArrowRightArrowLeft, FaArrowRightLong } from "react-icons/fa6";
 
-function marketing() {
+function Marketing() {
   const tasks = useQuery(api.tasks.get);
 
   return (
@@ -152,4 +152,4 @@ function marketing() {
   );
 }
 
-export default marketing;
+export default Marketing;
