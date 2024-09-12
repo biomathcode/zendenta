@@ -24,6 +24,7 @@
     "@react-aria/i18n": "^3.12.2",
     "@react-aria/utils": "^3.25.2",
     "@tanstack/react-table": "^8.20.5",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "convex": "^1.15.0",
     "convex-ents": "^0.11.0",

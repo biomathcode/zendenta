@@ -9,7 +9,7 @@ function Label({
 
   return (
     <label
-      className=" text-slate-400 font-semibold text-xs pl-2 whitespace-nowrap"
+      className=" text-slate-400 font-semibold text-xs whitespace-nowrap"
       aria-disabled={isCapital}
       htmlFor=""
     >

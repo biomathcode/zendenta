@@ -11,6 +11,7 @@ import { WorkingDays } from "@/ui/table.type";
 import NavGroup from "@/ui/navgroup";
 import { NavProvider } from "@/hooks/useNavOpen";
 import StockContainer from "@/screens/assert/assert.stocks";
+import { CalendarEventCard } from "@/ui/card";
 
 function Design() {
   return (
@@ -31,6 +32,9 @@ function Design() {
               <input type="file" accept=".png" />
               <button type="submit">Upload File</button>
             </form>
+            <div className=" max-w-lg">
+              <CalendarEventCard />
+            </div>
 
             {/* <StockContainer /> */}
           </article>
