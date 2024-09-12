@@ -14,14 +14,12 @@ import RootLayout from "@/app/dashboard/layout";
 
 function Design() {
   return (
-    <RootLayout>
-      <div className="h-full w-full flex flex-col ">
-        <Header type="Reservations" />
-        <article className=" font-Manrope mx-auto max-w-screen-xl px-4  md:flex md:flex-row  w-full h-[calc(100vh-60px)] ">
-          <ClinicReservation />
-        </article>
-      </div>
-    </RootLayout>
+    <div className="h-full w-full flex flex-col ">
+      <Header type="Reservations" />
+      <article className=" font-Manrope mx-auto max-w-screen-xl px-4  md:flex md:flex-row  w-full h-[calc(100vh-60px)] ">
+        <ClinicReservation />
+      </article>
+    </div>
   );
 }
 

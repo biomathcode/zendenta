@@ -1,3 +1,4 @@
+"use client";
 import { FormEvent, useRef, useState } from "react";
 
 const convexSiteUrl = process.env.NEXT_PUBLIC_CONVEX_URL || "";
