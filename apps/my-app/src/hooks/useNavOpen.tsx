@@ -19,9 +19,11 @@ export const NavProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <NavContext.Provider value={{ width, toggleNav }}>
-      {children}
-    </NavContext.Provider>
+    <>
+      <NavContext.Provider value={{ width, toggleNav }}>
+        {children}
+      </NavContext.Provider>
+    </>
   );
 };
 

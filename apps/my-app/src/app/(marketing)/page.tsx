@@ -17,8 +17,6 @@ import { BsCalendarEvent, BsFileText } from "react-icons/bs";
 import { FaArrowRightArrowLeft, FaArrowRightLong } from "react-icons/fa6";
 
 function Marketing() {
-  const tasks = useQuery(api.tasks.get);
-
   return (
     <main>
       <header className="px-4 lg:px-6 h-14 flex items-center">
@@ -72,9 +70,12 @@ function Marketing() {
               </p>
             </div>
             <div className="space-x-4 flex gap-2">
-              <button className=" bg-indigo-500 px-4 py-2 rounded text-white hover:bg-indigo-600 transition-all ease-in duration-200">
+              <Link
+                href={"/dashboard"}
+                className=" border bg-indigo-500 px-4 py-2 rounded-2xl text-white hover:bg-indigo-600 transition-all ease-in duration-200"
+              >
                 Get Started
-              </button>
+              </Link>
               <button className=" flex gap-2 items-center hover:bg-neutral-300 px-4 rounded border">
                 Contact Us <FaArrowRightLong />
               </button>
@@ -133,7 +134,6 @@ function Marketing() {
           </div>
         </div>
       </section>
-      {tasks?.map(({ _id, text }) => <div key={_id}>{text}</div>)}
 
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-gray-500 dark:text-gray-400">

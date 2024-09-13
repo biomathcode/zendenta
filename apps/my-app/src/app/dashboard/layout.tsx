@@ -3,6 +3,7 @@ import "../globals.css";
 import { ConvexClientProvider } from "@/lib/ConvexClientProvider";
 import { NavProvider } from "@/hooks/useNavOpen";
 import NavGroup from "@/ui/navgroup";
+import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
 
 export const metadata: Metadata = {
   title: "Denta Clinic Management System",
@@ -15,19 +16,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <ConvexClientProvider>
-          <div className="flex justify-center items-center min-w-full  ">
-            <main className="flex w-full h-full">
-              <NavProvider>
-                <NavGroup />
-              </NavProvider>
-              {children}
-            </main>
-          </div>
-        </ConvexClientProvider>
-      </body>
-    </html>
+    <ConvexAuthNextjsServerProvider>
+      <html lang="en">
+        <body>
+          <ConvexClientProvider>
+            <div className="flex justify-center items-center min-w-full  ">
+              <main className="flex w-full h-full">
+                <NavProvider>
+                  <NavGroup />
+                </NavProvider>
+                {children}
+              </main>
+            </div>
+          </ConvexClientProvider>
+        </body>
+      </html>
+    </ConvexAuthNextjsServerProvider>
   );
 }

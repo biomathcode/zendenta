@@ -15,17 +15,10 @@ import RootLayout from "../dashboard/layout";
 
 function Design() {
   return (
-    <RootLayout>
-      <div className="flex justify-center items-center min-w-full  ">
-        <main className="flex w-full h-full">
-          <NavProvider>
-            <NavGroup />
-          </NavProvider>
-
-          <div className="h-full w-full flex flex-col ">
-            <Header type="Dashboard" />
-            <article className=" mx-auto max-w-screen-xl px-4 py-4 md:flex md:flex-row md:py-4 w-full h-[calc(100vh-60px)] ">
-              {/* <form
+    <div className="h-full w-full flex flex-col ">
+      <Header type="Dashboard" />
+      <article className=" mx-auto max-w-screen-xl px-4 py-4 md:flex md:flex-row md:py-4 w-full h-[calc(100vh-60px)] ">
+        {/* <form
                 onSubmit={(e) => {
                   e.preventDefault();
                 }}
@@ -33,16 +26,13 @@ function Design() {
                 <input type="file" accept=".png" />
                 <button type="submit">Upload File</button>
               </form> */}
-              <div className=" max-w-lg">
-                <CalendarEventCard />
-              </div>
+        <div className=" max-w-lg">
+          <CalendarEventCard />
+        </div>
 
-              {/* <StockContainer /> */}
-            </article>
-          </div>
-        </main>
-      </div>
-    </RootLayout>
+        {/* <StockContainer /> */}
+      </article>
+    </div>
   );
 }
 

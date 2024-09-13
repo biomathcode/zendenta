@@ -13,7 +13,9 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as auth from "../auth.js";
 import type * as counter_table from "../counter_table.js";
+import type * as files from "../files.js";
 import type * as messages from "../messages.js";
 import type * as tasks from "../tasks.js";
 
@@ -26,7 +28,9 @@ import type * as tasks from "../tasks.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  auth: typeof auth;
   counter_table: typeof counter_table;
+  files: typeof files;
   messages: typeof messages;
   tasks: typeof tasks;
 }>;
