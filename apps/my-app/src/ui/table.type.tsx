@@ -8,6 +8,11 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useState, useEffect, useReducer } from "react";
+import Search from "./search";
+import { PiPlusCircle } from "react-icons/pi";
+import { Dialog } from "./dialog";
+import { CreateDialog } from "./createdialog";
+import CreateStockForm from "@/form/createStock";
 
 type Person = {
   name: string;
@@ -81,47 +86,64 @@ function TableContainer() {
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <table className=" border-neutral-200 w-full text-left rounded-lg">
-      <thead className="bg-neutral-100 rounded-lg">
-        {table.getHeaderGroups().map((headerGroup) => (
-          <tr key={headerGroup.id} className=" rounded-lg overflow-hidden">
-            {headerGroup.headers.map((header) => (
-              <th
-                key={header.id}
-                className=" uppercase border-none  px-3.5 py-4 font-semibold text-neutral-400 text-sm"
-              >
-                {flexRender(
-                  header.column.columnDef.header,
-                  header.getContext()
-                )}
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody className="rounded-lg">
-        {table.getRowModel().rows.length ? (
-          table.getRowModel().rows.map((row, i) => (
-            <tr
-              key={row.id}
-              className={`
-                ${i % 2 === 0 ? "bg-white" : "bg-white"}
-                `}
-            >
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id} className="px-3.5 py-2">
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
+    <div className=" flex flex-col gap-1">
+      <div className="flex gap-2 w-full justify-between">
+        <Search />
+        <div className="flex gap-4 items-center">
+          <button className="border p-2 rounded">Filters</button>
+          <button className="border p-2 rounded text-blue-500">
+            Order Stock
+          </button>
+          <CreateDialog title="" desc="" form={<CreateStockForm />}>
+            <button className="flex gap-2 items-center p-2 bg-blue-500 rounded text-white">
+              <PiPlusCircle /> New Products
+            </button>
+          </CreateDialog>
+        </div>
+      </div>
+
+      <table className=" border-neutral-200 w-full text-left rounded-lg">
+        <thead className="bg-neutral-100 rounded-lg">
+          {table.getHeaderGroups().map((headerGroup) => (
+            <tr key={headerGroup.id} className=" rounded-lg overflow-hidden">
+              {headerGroup.headers.map((header) => (
+                <th
+                  key={header.id}
+                  className=" uppercase border-none  px-3.5 py-4 font-semibold text-neutral-400 text-sm"
+                >
+                  {flexRender(
+                    header.column.columnDef.header,
+                    header.getContext()
+                  )}
+                </th>
               ))}
             </tr>
-          ))
-        ) : (
-          <tr className="text-center h-32">
-            <td colSpan={12}>No Recoard Found!</td>
-          </tr>
-        )}
-      </tbody>
-    </table>
+          ))}
+        </thead>
+        <tbody className="rounded-lg">
+          {table.getRowModel().rows.length ? (
+            table.getRowModel().rows.map((row, i) => (
+              <tr
+                key={row.id}
+                className={`
+                ${i % 2 === 0 ? "bg-white" : "bg-white"}
+                `}
+              >
+                {row.getVisibleCells().map((cell) => (
+                  <td key={cell.id} className="px-3.5 py-2">
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
+              </tr>
+            ))
+          ) : (
+            <tr className="text-center h-32">
+              <td colSpan={12}>No Recoard Found!</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

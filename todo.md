@@ -64,7 +64,16 @@ Now Comming to payments and finance of a clinic. A patients would pay for the tr
 - [ ] Create Schema design for the tables
 - [ ] 
 
-### 
+### Admin onboarding flow
+- Email, name, image, clinic name, 
+- here we will do two thing create user and create clinic as well 
+- Doctor invite 
+- Staff invite through setting page, in the onboarding flow
+
+### Invite system 
+- Send Invite with date, email, role="doctor"
+- who is inviting who - "Pratik Sharma is inviting You to join clinic name"
+- 
 
 
 

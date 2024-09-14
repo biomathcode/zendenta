@@ -11,19 +11,29 @@ import Label from "./label";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 
-const AvatarCard = () => {
+interface AvatarCardProps {
+  name?: string;
+  role?: string;
+  image?: string;
+}
+
+const AvatarCard = ({
+  name = "Pratik Sharma",
+  role = "Super Admin",
+  image = "/Avatar.avif",
+}: AvatarCardProps) => {
   return (
     <div className="flex gap-4 items-center justify-center">
       <Image
-        src={"/Avatar.avif"}
+        src={image}
         alt="Avatar Logo"
         width={40}
         height={40}
         className=" rounded-full"
       />
       <div className="flex flex-col gap-1 leading-none items-center">
-        <h1 className=" line-clamp-1 tracking-tight">Pratik Sharma</h1>
-        <Label isCapital={false}>Super Admin</Label>
+        <h1 className=" line-clamp-1 tracking-tight">{name}</h1>
+        <Label isCapital={false}>{role}</Label>
       </div>
       <div>
         <BiChevronDown />
@@ -111,7 +121,7 @@ function Header({
           </button>
         </div>
         <Hr direction="vertical" size="xs" />
-        <AvatarCard />
+        <AvatarCard name={user?.email} role={"Admin"} image={user?.image} />
       </div>
     </header>
   );

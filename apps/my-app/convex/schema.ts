@@ -47,6 +47,11 @@ export default defineSchema({
       v.literal("OUT OF STOCK")
     ),
     assertValue: v.number(), // in dollars
+    clinicId: v.id("clinic"),
+  }).index("clinicId", ["clinicId"]),
+  clinic: defineTable({
+    name: v.string(),
+    address: v.optional(v.string()),
   }),
 
   counter_table: defineTable({

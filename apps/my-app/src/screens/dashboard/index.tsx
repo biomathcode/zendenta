@@ -4,6 +4,7 @@ import Label from "@/ui/label";
 import UserGreeting from "@/ui/salutation";
 import Spacer from "@/ui/spacer";
 import Stats from "@/ui/stats";
+import { Suspense } from "react";
 import {
   BiArrowToTop,
   BiSolidDownArrow,
@@ -366,7 +367,9 @@ function StockGraph() {
 function DashboardContainer() {
   return (
     <div className="flex flex-col gap-4 w-full h-full">
-      <UserGreeting />
+      <Suspense fallback={<p>Loading</p>}>
+        <UserGreeting />
+      </Suspense>
       <div className="flex gap-4 flex-wrap">
         <Cashflow />
         <ExpenseGraph />
