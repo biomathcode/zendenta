@@ -3,7 +3,7 @@
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useState } from "react";
 
-export function PasswordReset() {
+export default function PasswordReset() {
   const { signIn } = useAuthActions();
   const [step, setStep] = useState<"forgot" | { email: string }>("forgot");
   return step === "forgot" ? (
