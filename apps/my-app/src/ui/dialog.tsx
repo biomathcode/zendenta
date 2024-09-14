@@ -1,115 +1,122 @@
-// Dialog
-// entry animation from rigth
-// exit animation
-
-// Dialog Types with information data
-// 1. Detail Accounts
-// 2. Add new Account
-// 3. Transfer money
-// 4. Confirmation
-// 5. Add new Doctor Staff
-// 6. Reservation
-// 7. Medical Checkup
-// 8. Add patient to waitlist
-// 9. Add Medical Records
-// 10. Treatment Summary
-// 11. Finish Treatment
-// 12. History and Comment
-// 13. Billing
-// 14. Payment Success
-// 15. Invoice
-// 16.
-
-// design of dialog
-// with header not header
-// dismissable not dimissable
-// Create an stack of dialogs
-// action button at the bottom
-// Sidebar
-// Multi-Step form
-// Dialog Components like breadcumb
-//
-
-// Dialog State => closed, open, and notactive
-
 "use client";
 
-import { Dialog, DialogTitle } from "@radix-ui/react-dialog";
-import { ReactNode, useState } from "react";
-import { Drawer } from "vaul";
+import * as React from "react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
 
-function MedicalCheckup() {
-  return (
-    <div className="p-4 bg-white rounded-3xl flex-1 max-h-[94%]">
-      <div className="max-w-md mx-auto">
-        <Drawer.Title className="font-medium mb-4">
-          Unstyled drawer for React.
-        </Drawer.Title>
-      </div>
-    </div>
-  );
-}
+import { cn } from "@/lib/utils";
+import { BiCross } from "react-icons/bi";
 
-// what should idea props
-// isheader,
-// title,
-// multistep,
-//
+const Dialog = DialogPrimitive.Root;
 
-function MyDialog({
-  isNested = false,
-  children = <button name="drawerbutton">Open Drawer</button>,
-  content = (
-    <div className="p-4 bg-white rounded-3xl flex-1 max-h-[94%]">
-      <div className="max-w-md mx-auto">
-        <DialogTitle className="font-medium mb-4">Medical Checkup</DialogTitle>
-        <p className="text-zinc-600 mb-2">
-          This component can be used as a replacement for a Dialog on mobile and
-          tablet devices.
-        </p>
-        <p className="text-zinc-600 mb-8">
-          It uses{" "}
-          <a
-            href="https://www.radix-ui.com/docs/primitives/components/dialog"
-            className="underline"
-            target="_blank"
-          >
-            Radix&rsquo;s Dialog primitive
-          </a>{" "}
-          under the hood and is inspired by{" "}
-          <a
-            href="https://twitter.com/devongovett/status/1674470185783402496"
-            className="underline"
-            target="_blank"
-          >
-            this tweet.
-          </a>
-        </p>
-      </div>
-    </div>
-  ),
-}: {
-  children?: ReactNode;
-  content?: ReactNode;
-  isNested?: boolean;
-}) {
-  // add hook for when drawer is active.
-  return (
-    <Drawer.Root direction="right">
-      <Drawer.Trigger asChild>{children}</Drawer.Trigger>
-      <Drawer.Portal>
-        <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-        <Drawer.Content
-          autoFocus
-          className={`flex flex-col focus:transition-all focus:duration-300 transition-all ease-in duration-300 justify-center rounded-t-[10px] h-full w-[500px] mt-24 fixed bottom-0  ${
-            isNested ? " right-44" : " -right-96 focus:right-4"
-          }`}
-        >
-          {content}
-        </Drawer.Content>
-      </Drawer.Portal>
-    </Drawer.Root>
-  );
-}
+const DialogTrigger = DialogPrimitive.Trigger;
 
-export default MyDialog;
+const DialogPortal = DialogPrimitive.Portal;
+
+const DialogClose = DialogPrimitive.Close;
+
+const DialogOverlay = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Overlay>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Overlay
+    ref={ref}
+    className={cn(
+      "fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      className
+    )}
+    {...props}
+  />
+));
+DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
+
+const DialogContent = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
+>(({ className, children, ...props }, ref) => (
+  <DialogPortal>
+    <DialogOverlay />
+    <DialogPrimitive.Content
+      ref={ref}
+      className={cn(
+        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+        <BiCross className="h-4 w-4" />
+        <span className="sr-only">Close</span>
+      </DialogPrimitive.Close>
+    </DialogPrimitive.Content>
+  </DialogPortal>
+));
+DialogContent.displayName = DialogPrimitive.Content.displayName;
+
+const DialogHeader = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div
+    className={cn(
+      "flex flex-col space-y-1.5 text-center sm:text-left",
+      className
+    )}
+    {...props}
+  />
+);
+DialogHeader.displayName = "DialogHeader";
+
+const DialogFooter = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div
+    className={cn(
+      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
+      className
+    )}
+    {...props}
+  />
+);
+DialogFooter.displayName = "DialogFooter";
+
+const DialogTitle = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Title>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Title
+    ref={ref}
+    className={cn(
+      "text-lg font-semibold leading-none tracking-tight",
+      className
+    )}
+    {...props}
+  />
+));
+DialogTitle.displayName = DialogPrimitive.Title.displayName;
+
+const DialogDescription = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Description>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Description
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props}
+  />
+));
+DialogDescription.displayName = DialogPrimitive.Description.displayName;
+
+export {
+  Dialog,
+  DialogPortal,
+  DialogOverlay,
+  DialogClose,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+};

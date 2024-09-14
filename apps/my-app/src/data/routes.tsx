@@ -8,6 +8,7 @@ import { FaCalendar, FaMoneyCheck, FaReceipt } from "react-icons/fa";
 import { FaBottleWater } from "react-icons/fa6";
 import { MdPerson2 } from "react-icons/md";
 
+//TODO:Feature finance has been disabled
 export const routes = [
   {
     groupname: "clinic",
@@ -34,33 +35,33 @@ export const routes = [
       },
     ],
   },
-  {
-    groupname: "finance",
-    children: [
-      {
-        name: "Accounts",
-        href: "accounts",
-        icon: <FaMoneyCheck />,
-      },
-      {
-        name: "Sales",
-        href: "sales",
+  // {
+  //   groupname: "finance",
+  //   children: [
+  //     {
+  //       name: "Accounts",
+  //       href: "accounts",
+  //       icon: <FaMoneyCheck />,
+  //     },
+  //     {
+  //       name: "Sales",
+  //       href: "sales",
 
-        icon: <BsFillFileBarGraphFill />,
-      },
-      {
-        name: "Purchase",
-        href: "purchase",
-        icon: <FaReceipt />,
-      },
-      {
-        name: "Payment Methods",
-        href: "payment-methods",
+  //       icon: <BsFillFileBarGraphFill />,
+  //     },
+  //     {
+  //       name: "Purchase",
+  //       href: "purchase",
+  //       icon: <FaReceipt />,
+  //     },
+  //     {
+  //       name: "Payment Methods",
+  //       href: "payment-methods",
 
-        icon: <BsCreditCard />,
-      },
-    ],
-  },
+  //       icon: <BsCreditCard />,
+  //     },
+  //   ],
+  // },
   {
     groupname: "PHYSICAL ASSERT",
     children: [

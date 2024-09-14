@@ -15,6 +15,7 @@ import Link from "next/link";
 import { FaTooth } from "react-icons/fa";
 import { BsCalendarEvent, BsFileText } from "react-icons/bs";
 import { FaArrowRightArrowLeft, FaArrowRightLong } from "react-icons/fa6";
+import {} from "@convex-dev/auth/react";
 
 function Marketing() {
   return (

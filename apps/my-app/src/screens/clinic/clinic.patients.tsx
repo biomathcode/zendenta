@@ -1,5 +1,6 @@
 import LinearGraph from "@/graph/linear";
 import { SalesCard } from "@/ui/card";
+import { CreateDialog } from "@/ui/createdialog";
 import Hr from "@/ui/hr";
 import Label from "@/ui/label";
 import Spacer from "@/ui/spacer";
@@ -22,7 +23,14 @@ function PatientsContainer() {
           className=" relative before:absolute before:w-full "
           value="active"
         >
-          TODO: Add Table with filter and Search
+          Add Patient with dialog, that will open form , and patient will be
+          displayed in the table TODO: Add Table with filter and Search
+          <CreateDialog
+            title="Add Patients"
+            desc="Fill the form to add patient"
+          >
+            <button>Add Patient</button>
+          </CreateDialog>
         </TabsContent>
         <TabsContent value="inactive">Change your password here.</TabsContent>
       </Tabs>

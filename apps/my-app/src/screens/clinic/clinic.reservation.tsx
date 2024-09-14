@@ -1,8 +1,7 @@
 "use client";
 import { AvatarCard, CalendarEventCard } from "@/ui/card";
-import MyDialog from "@/ui/dialog";
+import MyDialog from "@/ui/drawer";
 import Hr from "@/ui/hr";
-import Stats from "@/ui/stats";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/ui/tab";
 import { BiDotsHorizontal } from "react-icons/bi";
 import { FaAngleLeft, FaAngleRight, FaCalendarCheck } from "react-icons/fa";
@@ -14,7 +13,7 @@ import { Drawer } from "vaul";
 
 function DoctorView() {
   return (
-    <div className="flex flex-col w-[400px] ">
+    <div className=" flex flex-col w-[400px] min-w-[400px] ">
       <div className=" h-24 flex justify-around items-center border-t border-r border-b ">
         <AvatarCard
           name="Dr. Soap Mactavish"
@@ -133,11 +132,11 @@ function DayView() {
     "8am",
   ];
   return (
-    <div>
+    <div className="sticky left-0 top-0 bg-white z-auto ">
       {slots.map((e) => (
         <div
           key={e}
-          className={`border-r border-t flex justify-center text-sm pt-4 ${
+          className={` border-r border-t flex justify-center text-sm pt-4 ${
             e.includes("GMT") ? " w-20 h-24" : " h-32 w-20 "
           } `}
         >
@@ -162,6 +161,7 @@ function ClinicReservation() {
           className=" relative overflow-scroll "
           style={{
             maxHeight: "calc(100vh - 100px)",
+            maxWidth: "calc(100vw - 240px)",
           }}
           value="Calendar"
         >
@@ -202,10 +202,16 @@ function ClinicReservation() {
               </button>
             </div>
           </div>
-          <div className="flex  w-full h-full  overflow-scroll">
-            <DayView />
-            <DoctorView />
-            <DoctorView />
+          <div className=" max-w-[calc(100vw - 260px)] max-h-full overflow-hidden">
+            <div className="relative flex max-w-full  w-full h-full  overflow-scroll snap-x snap-proximity">
+              <DayView />
+              <DoctorView />
+              <DoctorView />
+              <DoctorView />
+
+              <DoctorView />
+              <DoctorView />
+            </div>
           </div>
           {/* <WeekView defaultValue={today(getLocalTimeZone())} /> */}
         </TabsContent>

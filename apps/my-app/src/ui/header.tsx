@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { PropsWithChildren, ReactNode } from "react";
 import { BiChevronDown, BiQuestionMark } from "react-icons/bi";
@@ -7,6 +8,8 @@ import { IoSearch } from "react-icons/io5";
 import { PiPlus, PiPlusCircle } from "react-icons/pi";
 import Hr from "./hr";
 import Label from "./label";
+import { useQuery } from "convex/react";
+import { api } from "../../convex/_generated/api";
 
 const AvatarCard = () => {
   return (
@@ -66,6 +69,9 @@ function Header({
     | "Report"
     | "Support";
 }) {
+  const user = useQuery(api.users.viewer);
+
+  console.log(user);
   return (
     <header className=" border-b-[1px] border-neutral-300 h-[60px] py-4 px-8 bg-white w-full flex gap-4 justify-between ">
       <h1 className=" text-xl font-semibold text-slate-700">{type}</h1>
