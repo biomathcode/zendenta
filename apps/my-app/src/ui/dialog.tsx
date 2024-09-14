@@ -34,6 +34,7 @@
 
 "use client";
 
+import { Dialog, DialogTitle } from "@radix-ui/react-dialog";
 import { ReactNode, useState } from "react";
 import { Drawer } from "vaul";
 
@@ -61,9 +62,7 @@ function MyDialog({
   content = (
     <div className="p-4 bg-white rounded-3xl flex-1 max-h-[94%]">
       <div className="max-w-md mx-auto">
-        <Drawer.Title className="font-medium mb-4">
-          Medical Checkup
-        </Drawer.Title>
+        <DialogTitle className="font-medium mb-4">Medical Checkup</DialogTitle>
         <p className="text-zinc-600 mb-2">
           This component can be used as a replacement for a Dialog on mobile and
           tablet devices.

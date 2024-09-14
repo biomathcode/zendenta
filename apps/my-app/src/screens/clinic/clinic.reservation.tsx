@@ -24,74 +24,82 @@ function DoctorView() {
           <BiDotsHorizontal size={20} className="text-neutral-500" />
         </button>
       </div>
-      {[
-        "9am",
-        "10am",
-        "11am",
-        "12am",
-        "1pm",
-        "2pm",
-        "3pm",
-        "4pm",
-        "5pm",
-        "6pm",
-        "7pm",
-        "8pm",
-        "9pm",
-        "10pm",
-        "11pm",
-        "12pm",
-        "1am",
-        "2am",
-        "3am",
-        "4am",
-        "5am",
-        "6am",
-        "7am",
-        "8am",
-      ].map((e) => (
-        <div key={e} className="h-32 w-full border-b border-r" />
-      ))}
-
-      <MyDialog
-        isNested={false}
-        content={
-          <div className=" bg-white relative rounded-3xl flex-1 max-h-[94%]">
-            <Drawer.Title className=" py-4 px-8 font-medium text-lg mx-auto ">
-              Medical Checkup
-            </Drawer.Title>
-            <Drawer.Close
-              aria-label="Close"
-              asChild
-              className=" absolute right-6 top-4"
-            >
-              <button className=" bg-neutral-200 rounded-full p-1 ">
-                <MdOutlineKeyboardArrowRight
-                  className=" text-neutral-500"
-                  size={20}
+      <div className="relative ">
+        <div className=" absolute top-4">
+          <MyDialog
+            isNested={false}
+            content={
+              <div className=" bg-white relative rounded-3xl flex-1 max-h-[94%]">
+                <Drawer.Title className=" py-4 px-8 font-medium text-lg mx-auto ">
+                  Medical Checkup
+                </Drawer.Title>
+                <Drawer.Close
+                  aria-label="Close"
+                  asChild
+                  className=" absolute right-6 top-4"
+                >
+                  <button className=" bg-neutral-200 rounded-full p-1 ">
+                    <MdOutlineKeyboardArrowRight
+                      className=" text-neutral-500"
+                      size={20}
+                    />
+                  </button>
+                </Drawer.Close>
+                <Hr
+                  className=" min-w-full"
+                  direction="horizontal"
+                  size="full"
                 />
-              </button>
-            </Drawer.Close>
-            <Hr className=" min-w-full" direction="horizontal" size="full" />
 
-            <div className="max-w-md mx-auto p-3">
-              <p className="text-zinc-600 mb-2">
-                This component can be used as a replacement for a Dialog on
-                mobile and tablet devices.
-              </p>
-              <div>
-                <MyDialog isNested={true}>
-                  <button>Open Second Dialog</button>
-                </MyDialog>
+                <div className="max-w-md mx-auto p-3">
+                  <p className="text-zinc-600 mb-2">
+                    This component can be used as a replacement for a Dialog on
+                    mobile and tablet devices.
+                  </p>
+                  <div>
+                    <MyDialog isNested={true}>
+                      <button>Open Second Dialog</button>
+                    </MyDialog>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        }
-      >
-        <button>
-          <CalendarEventCard />
-        </button>
-      </MyDialog>
+            }
+          >
+            <button>
+              <CalendarEventCard />
+            </button>
+          </MyDialog>
+        </div>
+
+        {[
+          "9am",
+          "10am",
+          "11am",
+          "12am",
+          "1pm",
+          "2pm",
+          "3pm",
+          "4pm",
+          "5pm",
+          "6pm",
+          "7pm",
+          "8pm",
+          "9pm",
+          "10pm",
+          "11pm",
+          "12pm",
+          "1am",
+          "2am",
+          "3am",
+          "4am",
+          "5am",
+          "6am",
+          "7am",
+          "8am",
+        ].map((e) => (
+          <div key={e} className="h-32 w-full border-b border-r"></div>
+        ))}
+      </div>
     </div>
   );
 }
