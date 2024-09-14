@@ -3,6 +3,7 @@ import { SalesCard } from "@/ui/card";
 import Hr from "@/ui/hr";
 import Search from "@/ui/search";
 import Spacer from "@/ui/spacer";
+import Link from "next/link";
 import { BiFilter, BiPlus } from "react-icons/bi";
 import { IoFilterCircleOutline } from "react-icons/io5";
 import { PiPlusCircleDuotone } from "react-icons/pi";
@@ -29,10 +30,12 @@ function PeripheralsContainer() {
             Filter
           </button>
           {/*TODO: Add Dialgo here */}
-          <button className="flex gap-2  items-center bg-indigo-500 px-2 py-0 rounded text-sm text-neutral-50">
-            <BiPlus size={16} />
-            Add Peripherals
-          </button>
+          <Link href={"/peripherals/add"}>
+            <button className="flex gap-2  items-center bg-indigo-500 px-2 py-0 rounded text-sm text-neutral-50">
+              <BiPlus size={16} />
+              Add Peripherals
+            </button>
+          </Link>
         </div>
       </div>
     </div>

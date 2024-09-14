@@ -30,12 +30,12 @@ export function PasswordReset() {
     >
       <input name="code" placeholder="Code" type="text" />
       <input name="newPassword" placeholder="New password" type="password" />
-      <input name="email" value={step.email} type="hidden" />
+      <input name="email" value={step?.email} type="hidden" />
       <input name="flow" value="reset-verification" type="hidden" />
       <button type="submit">Continue</button>
-      <button type="button" onClick={() => setStep("signIn")}>
+      {/* <button type="button" onClick={() => setStep("forget")}>
         Cancel
-      </button>
+      </button> */}
     </form>
   );
 }

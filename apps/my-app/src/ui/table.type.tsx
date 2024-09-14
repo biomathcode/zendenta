@@ -12,7 +12,7 @@ import Search from "./search";
 import { PiPlusCircle } from "react-icons/pi";
 import { Dialog } from "./dialog";
 import { CreateDialog } from "./createdialog";
-import CreateStockForm from "@/form/createStock";
+import CreateStockForm from "@/form/createClinic";
 
 type Person = {
   name: string;

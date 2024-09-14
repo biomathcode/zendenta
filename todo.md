@@ -62,7 +62,9 @@ Now Comming to payments and finance of a clinic. A patients would pay for the tr
 - [ ] File Upload with convex
 - [ ] Add authentication email and password
 - [ ] Create Schema design for the tables
-- [ ] 
+
+
+We would need to add search and filter options in our get queries as well 
 
 ### Admin onboarding flow
 - Email, name, image, clinic name, 
