@@ -1,5 +1,4 @@
 import LinearGraph from "@/graph/linear";
-import Button from "@/ui/button";
 import { SalesCard } from "@/ui/card";
 import Hr from "@/ui/hr";
 import Search from "@/ui/search";
@@ -46,7 +45,7 @@ function SalesContainer() {
             </div>
           </div>
 
-          <TableContainer />
+          <TableContainer data={[]} />
         </TabsContent>
         <TabsContent value="Payment">Change your password here.</TabsContent>
       </Tabs>

@@ -27,9 +27,13 @@ export default defineSchema({
   staff: defineTable({
     name: v.string(),
     contact: v.string(),
-    workind_days: v.array(v.number()),
+    email: v.string(),
+    working_days: v.array(v.number()), //1M, 2T, 3W, 4T,5F,6S,7S
+    assigned_cosmetic: v.array(v.string()),
     assigned_treatment: v.array(v.string()),
     type: v.union(v.literal("PART-TIME"), v.literal("FULL-TIME")),
+    occupation: v.string(),
+    image: v.optional(v.string()),
   }),
   stocks: defineTable({
     name: v.string(),
@@ -52,6 +56,16 @@ export default defineSchema({
   clinic: defineTable({
     name: v.string(),
     address: v.optional(v.string()),
+  }),
+  treatments: defineTable({
+    name: v.string(),
+    category: v.union(
+      v.literal("Medical Service"),
+      v.literal("Cosmatic Service")
+    ),
+    description: v.string(),
+    price: v.number(),
+    duration: v.number(), // in seconds
   }),
 
   counter_table: defineTable({

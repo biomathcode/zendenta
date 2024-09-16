@@ -1,14 +1,5 @@
-import Box from "@/ui/box";
-import Button from "@/ui/button";
-import Chip from "@/ui/chip";
-import { colors } from "@/ui/colors";
 import Header from "@/ui/header";
 
-import { TypographyDemo } from "@/ui/typography";
-import { WorkingDays } from "@/ui/table.type";
-
-import NavGroup from "@/ui/navgroup";
-import { NavProvider } from "@/hooks/useNavOpen";
 import DashboardContainer from "@/screens/dashboard";
 
 function Design() {

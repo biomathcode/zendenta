@@ -30,7 +30,7 @@ function StockContainer() {
           className=" relative before:absolute before:w-full  "
           value="Inventory"
         >
-          <TableContainer />
+          <TableContainer data={[]} />
         </TabsContent>
         <TabsContent value="Order Stock">
           Change your password here.
