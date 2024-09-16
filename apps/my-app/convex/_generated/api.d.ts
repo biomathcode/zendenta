@@ -19,6 +19,7 @@ import type * as auth from "../auth.js";
 import type * as clinic from "../clinic.js";
 import type * as counter_table from "../counter_table.js";
 import type * as documents from "../documents.js";
+import type * as emailActions from "../emailActions.js";
 import type * as files from "../files.js";
 import type * as http from "../http.js";
 import type * as messages from "../messages.js";
@@ -43,6 +44,7 @@ declare const fullApi: ApiFromModules<{
   clinic: typeof clinic;
   counter_table: typeof counter_table;
   documents: typeof documents;
+  emailActions: typeof emailActions;
   files: typeof files;
   http: typeof http;
   messages: typeof messages;
