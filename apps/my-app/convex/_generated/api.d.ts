@@ -17,16 +17,15 @@ import type * as ResendOTP from "../ResendOTP.js";
 import type * as ResendOTPPasswordReset from "../ResendOTPPasswordReset.js";
 import type * as auth from "../auth.js";
 import type * as clinic from "../clinic.js";
-import type * as counter_table from "../counter_table.js";
 import type * as documents from "../documents.js";
-import type * as emailActions from "../emailActions.js";
 import type * as files from "../files.js";
 import type * as http from "../http.js";
 import type * as messages from "../messages.js";
 import type * as patients from "../patients.js";
+import type * as peripherals from "../peripherals.js";
 import type * as staff from "../staff.js";
 import type * as stocks from "../stocks.js";
-import type * as tasks from "../tasks.js";
+import type * as treatments from "../treatments.js";
 import type * as users from "../users.js";
 
 /**
@@ -42,16 +41,15 @@ declare const fullApi: ApiFromModules<{
   ResendOTPPasswordReset: typeof ResendOTPPasswordReset;
   auth: typeof auth;
   clinic: typeof clinic;
-  counter_table: typeof counter_table;
   documents: typeof documents;
-  emailActions: typeof emailActions;
   files: typeof files;
   http: typeof http;
   messages: typeof messages;
   patients: typeof patients;
+  peripherals: typeof peripherals;
   staff: typeof staff;
   stocks: typeof stocks;
-  tasks: typeof tasks;
+  treatments: typeof treatments;
   users: typeof users;
 }>;
 export declare const api: FilterApi<

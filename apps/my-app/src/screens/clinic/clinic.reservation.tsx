@@ -3,22 +3,30 @@ import { AvatarCard, CalendarEventCard } from "@/ui/card";
 import MyDialog from "@/ui/drawer";
 import Hr from "@/ui/hr";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/ui/tab";
+import { useQuery } from "convex/react";
+import { format } from "date-fns";
 import { BiDotsHorizontal } from "react-icons/bi";
 import { FaAngleLeft, FaAngleRight, FaCalendarCheck } from "react-icons/fa";
 import { MdFilterList, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Drawer } from "vaul";
+import { api } from "../../../convex/_generated/api";
 
 //TODO add TimeTicker
 //TODO: add
 
-function DoctorView() {
+function DoctorView({
+  name,
+  label = "Today appointments 4 patient(s)",
+  image,
+}: {
+  name: string;
+  label: string;
+  image: string;
+}) {
   return (
     <div className=" flex flex-col w-[400px] min-w-[400px] ">
       <div className=" h-24 flex justify-around items-center border-t border-r border-b ">
-        <AvatarCard
-          name="Dr. Soap Mactavish"
-          label="Today appointments 4 patient(s)"
-        />
+        <AvatarCard name={name} label={label} image={image} />
         <button>
           <BiDotsHorizontal size={20} className="text-neutral-500" />
         </button>
@@ -148,6 +156,15 @@ function DayView() {
 }
 
 function ClinicReservation() {
+  const currentDate = new Date();
+
+  // Determine the salutation based on the current time
+  const currentHour = currentDate.getHours();
+  const formattedDate = format(currentDate, "EEE,d MMM  yyyy");
+
+  const staff = useQuery(api.staff.get);
+
+  console.log("staff", staff);
   return (
     <div className="flex flex-col gap-5 w-full h-full">
       <Tabs defaultValue="Calendar" className="relative w-full h-full">
@@ -183,7 +200,7 @@ function ClinicReservation() {
                   <FaAngleLeft size={20} />
                   <FaAngleRight size={20} />
                   <div className=" text-neutral-700 font-medium text-lg">
-                    Fri, 16 May 2022
+                    <p className="text-neutral-800">{formattedDate}</p>
                   </div>
                   <Hr direction="vertical" size="full" />
                 </div>
@@ -202,15 +219,18 @@ function ClinicReservation() {
               </button>
             </div>
           </div>
+
           <div className=" max-w-[calc(100vw - 260px)] max-h-full overflow-hidden">
             <div className="relative flex max-w-full  w-full h-full  overflow-scroll snap-x snap-proximity">
               <DayView />
-              <DoctorView />
-              <DoctorView />
-              <DoctorView />
-
-              <DoctorView />
-              <DoctorView />
+              {staff?.map((e) => (
+                <DoctorView
+                  key={e._id}
+                  name={e.name}
+                  image={e.image || ""}
+                  label={"has 4 appoointments"}
+                />
+              ))}
             </div>
           </div>
           {/* <WeekView defaultValue={today(getLocalTimeZone())} /> */}

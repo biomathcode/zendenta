@@ -1,5 +1,5 @@
 import { defineSchema, defineTable } from "convex/server";
-import { v } from "convex/values";
+import { v, VString } from "convex/values";
 import { authTables } from "@convex-dev/auth/server";
 
 export default defineSchema({
@@ -8,14 +8,7 @@ export default defineSchema({
     body: v.string(),
     format: v.string(),
   }),
-  likes: defineTable({
-    liker: v.string(),
-    messageId: v.id("messages"),
-  }),
-  tasks: defineTable({
-    text: v.string(),
-    isCompleted: v.boolean(),
-  }),
+
   patients: defineTable({
     name: v.string(),
     phone: v.string(),
@@ -24,6 +17,24 @@ export default defineSchema({
     registered: v.number(), //date type
     lastVisited: v.number(),
   }),
+  appointment: defineTable({
+    patientId: v.string(),
+    treatmentId: v.string(),
+    doctorId: v.string(),
+    documentId: v.string(),
+    dateTime: v.number(),
+    note: v.optional(v.string()),
+    status: v.union(
+      v.literal("FINISHED"),
+      v.literal("Doing Treatment"),
+      v.literal("Registered")
+    ),
+  }).index("by_patientId_treatmentId_doctorId", [
+    "patientId",
+    "treatmentId",
+    "doctorId",
+    "documentId",
+  ]),
   staff: defineTable({
     name: v.string(),
     contact: v.string(),
@@ -69,6 +80,42 @@ export default defineSchema({
     price: v.number(),
     duration: v.number(), // in seconds
   }),
+  peripherals: defineTable({
+    productname: v.string(),
+    productimage: v.string(),
+    assignedTo: v.string(), // room 1 , 2
+    tags: v.array(v.string()),
+    series: v.string(),
+    category: v.string(), // Main Equipment, Support Equipment, Diagnostic Tools
+    weigth: v.number(),
+    sku: v.string(),
+    barcode: v.string(),
+    description: v.string(),
+    purchaseDate: v.number(),
+    purchasePrice: v.number(),
+    vendor: v.string(),
+    invoiceNumber: v.number(),
+    status: v.union(
+      v.literal("Draft"),
+      v.literal("Used"),
+      v.literal("Not Used")
+    ),
+  }),
+  documents: defineTable({
+    title: v.string(),
+    description: v.optional(v.string()),
+    tokenIdentifier: v.optional(v.string()),
+    orgId: v.optional(v.string()),
+    embedding: v.optional(v.array(v.float64())),
+    fileId: v.id("_storage"),
+  })
+    .index("by_tokenIdentifier", ["tokenIdentifier"])
+    .index("by_orgId", ["orgId"])
+    .vectorIndex("by_embedding", {
+      vectorField: "embedding",
+      dimensions: 1536,
+      filterFields: ["tokenIdentifier", "orgId"],
+    }),
 
   counter_table: defineTable({
     name: v.string(),
