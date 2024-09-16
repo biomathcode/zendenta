@@ -34,6 +34,8 @@ export default defineSchema({
     type: v.union(v.literal("PART-TIME"), v.literal("FULL-TIME")),
     occupation: v.string(),
     image: v.optional(v.string()),
+  }).searchIndex("search_staff", {
+    searchField: "name",
   }),
   stocks: defineTable({
     name: v.string(),

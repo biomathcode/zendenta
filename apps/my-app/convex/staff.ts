@@ -8,7 +8,10 @@ import { Id } from "./_generated/dataModel";
 export const get = query({
   args: {},
   handler: async (ctx) => {
-    const staff = await ctx.db.query("staff").collect();
+    const staff = await ctx.db
+      .query("staff")
+      // .withSearchIndex("search_staff", (q) => q.search("name", "Pratik"))
+      .collect();
     return await Promise.all(
       staff.map(async (e) => ({
         ...e,

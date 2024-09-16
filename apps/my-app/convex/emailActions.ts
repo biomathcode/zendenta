@@ -12,7 +12,9 @@ export const sendEmail = httpAction(async (ctx, request) => {
       from,
       to,
       subject,
-      react: EmailTemplate({ firstName: body }),
+      html: "<h1>Welcome</h1>",
+
+      // react: EmailTemplate({ firstName: body }),
     });
 
     if (error) {
