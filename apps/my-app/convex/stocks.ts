@@ -18,6 +18,7 @@ export const getStocks = query({
 export const createStocks = mutation({
   args: {
     name: v.string(),
+    image: v.string(),
     categories: v.union(
       v.literal("Antiseptic"),
       v.literal("Antibiotic"),
@@ -31,8 +32,8 @@ export const createStocks = mutation({
       v.literal("LOW STOCK"),
       v.literal("OUT OF STOCK")
     ),
+    quantity: v.number(),
     assertValue: v.number(), // in dollars
-    clinicId: v.id("clinic"),
   },
   handler: async (ctx, args) => {
     await ctx.db.insert("stocks", {

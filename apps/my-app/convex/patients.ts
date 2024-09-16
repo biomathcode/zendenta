@@ -18,14 +18,24 @@ export const createPatient = mutation({
     phone: v.string(),
     email: v.string(),
     address: v.string(),
-    registered: v.number(), //date type
-    lastVisited: v.number(),
+    registered: v.string(), //date type
+    lastVisited: v.string(),
+    image: v.string(),
   },
+
   handler: async (
     ctx,
-    { name, phone, email, address, registered, lastVisited }
+    { name, phone, email, address, registered, lastVisited, image }
   ) => {
-    const newpatient = { name, phone, email, address, registered, lastVisited };
+    const newpatient = {
+      name,
+      phone,
+      email,
+      address,
+      registered,
+      lastVisited,
+      image,
+    };
     await ctx.db.insert("patients", newpatient);
   },
 });

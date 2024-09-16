@@ -5,8 +5,7 @@ import Search from "@/ui/search";
 import Spacer from "@/ui/spacer";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tab";
-import { TableContainer } from "@/ui/table.type";
-import { FaFileExport } from "react-icons/fa";
+
 import { PiExport, PiExportBold, PiExportFill } from "react-icons/pi";
 
 function SalesContainer() {
@@ -44,8 +43,6 @@ function SalesContainer() {
               </button>
             </div>
           </div>
-
-          <TableContainer data={[]} />
         </TabsContent>
         <TabsContent value="Payment">Change your password here.</TabsContent>
       </Tabs>

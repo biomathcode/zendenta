@@ -18,7 +18,6 @@ export const getPeripherals = query({
   },
 });
 
-//TODO: Send an email to the doctor
 export const createPeripherals = mutation({
   args: {
     productname: v.string(),

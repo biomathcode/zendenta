@@ -14,15 +14,16 @@ export default defineSchema({
     phone: v.string(),
     email: v.string(),
     address: v.string(),
-    registered: v.number(), //date type
-    lastVisited: v.number(),
+    registered: v.string(), //date type
+    lastVisited: v.string(),
+    image: v.string(),
   }),
   appointment: defineTable({
     patientId: v.string(),
     treatmentId: v.string(),
     doctorId: v.string(),
     documentId: v.string(),
-    dateTime: v.number(),
+    dateTime: v.string(),
     note: v.optional(v.string()),
     status: v.union(
       v.literal("FINISHED"),
@@ -50,6 +51,7 @@ export default defineSchema({
   }),
   stocks: defineTable({
     name: v.string(),
+    image: v.string(),
     categories: v.union(
       v.literal("Antiseptic"),
       v.literal("Antibiotic"),
@@ -63,9 +65,10 @@ export default defineSchema({
       v.literal("LOW STOCK"),
       v.literal("OUT OF STOCK")
     ),
+    quantity: v.number(),
     assertValue: v.number(), // in dollars
-    clinicId: v.id("clinic"),
-  }).index("clinicId", ["clinicId"]),
+    // clinicId: v.id("clinic"),
+  }),
   clinic: defineTable({
     name: v.string(),
     address: v.optional(v.string()),

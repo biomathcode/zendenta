@@ -78,7 +78,7 @@ export function MultiStep({
               {`Step 
               ${e.id}`}
             </Label>
-            <div className=" font-semibold text-sm">{e.label}</div>
+            <div className=" text-xs">{e.label}</div>
           </div>
           {steps.length !== e.id && <Progress progress={(20 / 40) * 100} />}
         </div>

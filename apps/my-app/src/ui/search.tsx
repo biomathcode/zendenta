@@ -12,7 +12,7 @@ function Search() {
         </span>
         <input
           placeholder="Search for anything here..."
-          className=" bg-neutral-100 rounded-full px-4 pl-8 py-2 border-2 border-neutral-200 min-w-80  "
+          className=" bg-neutral-100 rounded-full px-2 pl-8 py-2 border-2 border-neutral-200 min-w-80  "
         ></input>
       </label>
     </form>

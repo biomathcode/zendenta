@@ -10,6 +10,7 @@ import { FaAngleLeft, FaAngleRight, FaCalendarCheck } from "react-icons/fa";
 import { MdFilterList, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Drawer } from "vaul";
 import { api } from "../../../convex/_generated/api";
+import { MultiStep } from "@/ui/multistepper";
 
 //TODO add TimeTicker
 //TODO: add
@@ -23,6 +24,10 @@ function DoctorView({
   label: string;
   image: string;
 }) {
+  const currentDate = new Date();
+
+  const formattedDate = format(currentDate, "EEEE, MMMM d, yyyy");
+
   return (
     <div className=" flex flex-col w-[400px] min-w-[400px] ">
       <div className=" h-24 flex justify-around items-center border-t border-r border-b ">
@@ -31,7 +36,7 @@ function DoctorView({
           <BiDotsHorizontal size={20} className="text-neutral-500" />
         </button>
       </div>
-      <div className="relative ">
+      <div className="relative flex flex-col ">
         <div className=" absolute top-4">
           <MyDialog
             isNested={false}
@@ -104,7 +109,85 @@ function DoctorView({
           "7am",
           "8am",
         ].map((e) => (
-          <div key={e} className="h-32 w-full border-b border-r"></div>
+          <MyDialog
+            key={e}
+            isNested={false}
+            content={
+              <div className=" bg-white relative rounded-3xl flex-1 max-h-[94%]">
+                <Drawer.Title className=" py-4 px-8 font-medium text-lg mx-auto ">
+                  Add Patient to waitlist
+                </Drawer.Title>
+                <Drawer.Close
+                  aria-label="Close"
+                  asChild
+                  className=" absolute right-6 top-4"
+                >
+                  <button className=" bg-neutral-200 rounded-full p-1 ">
+                    <MdOutlineKeyboardArrowRight
+                      className=" text-neutral-500"
+                      size={20}
+                    />
+                  </button>
+                </Drawer.Close>
+                <Hr
+                  className=" min-w-full"
+                  direction="horizontal"
+                  size="full"
+                />
+
+                <div className="max-w-md mx-auto p-1 my-4">
+                  <MultiStep />
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                    }}
+                    className="flex flex-col gap-4"
+                  >
+                    <fieldset>
+                      <label>
+                        Treatment
+                        <select name="treatment">
+                          <option>Tooth Scaling</option>
+                          <option>Tooth Whiting</option>
+                        </select>
+                      </label>
+                    </fieldset>
+                    <fieldset>
+                      <label className="flex flex-col ">
+                        <span>date and time</span>
+                        <div className="flex gap-3">
+                          <p className="text-gray-500">{formattedDate}</p>
+                          <div>{e}</div>
+                          to
+                          <div>3:00pm</div>
+                        </div>
+                      </label>
+                    </fieldset>
+                    <fieldset>
+                      <label className="flex flex-col">
+                        <span>Quick Note</span>
+                        <textarea />
+                      </label>
+                    </fieldset>
+                    <fieldset>
+                      <label className="flex flex-col">
+                        <span>Attach Files</span>
+                        <input type="file" />
+                      </label>
+                    </fieldset>
+                    <div className="flex  w-full justify-between">
+                      <button>cancel</button>
+                      <button type="submit">Submit</button>
+                    </div>
+                  </form>
+
+                  <div></div>
+                </div>
+              </div>
+            }
+          >
+            <button className=" h-32 w-full border-b border-r hover:bg-neutral-200"></button>
+          </MyDialog>
         ))}
       </div>
     </div>

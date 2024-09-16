@@ -60,8 +60,8 @@ function NavGroup() {
           );
         })}
         <hr className=" w-full border-t-2 bg-slate-100 rounded " />
-        <NavItem icon="Report" label="Report" />
-        <NavItem icon="Customer Support" label="Customer Support" />
+        <NavItem icon="Report" label="Document Search" />
+        <NavItem icon="Customer Support" label="Chat" />
       </div>
     </Nav>
   );

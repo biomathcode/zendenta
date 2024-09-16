@@ -1,15 +1,15 @@
-- [ ] Setup Tailwind
-- [ ] Setup Storybook 
-- [ ] Add Calendar View
-- [ ] Create Stackable Dialogs
+- [X] Setup Tailwind
+- [X] Setup Storybook 
+- [X] Add Calendar View
+- [X] Create Stackable Dialogs
 - [ ] 
 
 ### Objective of the Projects
 - [ ] Dental Clinic management
-- [ ] Adding Staff member and information
-- [ ] Adding Stock information
-- [ ] Treatement Plans 
-- [ ] Adding Patients
+- [X] Adding Staff member and information
+- [X] Adding Stock information
+- [X] Treatement Plans 
+- [X] Adding Patients
 - [ ] Collecting Patient details
 - [ ] Payment Methods
 - [ ] Medical Stocks
@@ -42,6 +42,7 @@
 - [ ] 
 - [ ] Add Appointments and change the appointments
 - [ ] Add Location information about the client
+- [ ] Add The Dialogs after success
  
 
 ### Onboarding

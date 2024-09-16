@@ -35,6 +35,7 @@ function StaffListContainer() {
         >
           {staff && (
             <TableContainer
+              dataType="Staff"
               data={staff}
               header={
                 <div className="flex gap-2 w-full justify-between">
