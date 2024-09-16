@@ -2,7 +2,7 @@ import { httpAction } from "./_generated/server";
 import { Resend } from "resend";
 import { EmailTemplate } from "../src/emails/welcome";
 
-const resend = new Resend(process.env.AUTH_RESEND_KEY);
+const resend = new Resend(process.env.AUTH_RESEND_KEY || "");
 
 export const sendEmail = httpAction(async (ctx, request) => {
   try {
