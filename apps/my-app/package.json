@@ -10,10 +10,7 @@
     "test": "vitest",
     "test:once": "vitest run",
     "test:debug": "vitest --inspect-brk --no-file-parallelism",
-    "test:coverage": "vitest run --coverage --coverage.reporter=text",
-    "email:build": "email build ",
-    "email:dev": "email dev --dir src/emails",
-    "email:export": "email export"
+    "test:coverage": "vitest run --coverage --coverage.reporter=text"
   },
   "dependencies": {
     "@auth/core": "^0.34.2",
