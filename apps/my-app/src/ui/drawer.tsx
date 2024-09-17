@@ -102,7 +102,9 @@ function MyDialog({
         <Drawer.Content
           autoFocus
           className={`flex flex-col focus:transition-all focus:duration-300 transition-all ease-in duration-300 justify-center rounded-t-[10px] h-full w-[500px] mt-24 fixed bottom-0  ${
-            isNested ? " right-44" : " -right-96 focus:right-4"
+            isNested
+              ? " right-44"
+              : " -right-96 focus:right-4 focus-within:right-4"
           }`}
         >
           {content}

@@ -35,33 +35,33 @@ export const routes = [
       },
     ],
   },
-  // {
-  //   groupname: "finance",
-  //   children: [
-  //     {
-  //       name: "Accounts",
-  //       href: "accounts",
-  //       icon: <FaMoneyCheck />,
-  //     },
-  //     {
-  //       name: "Sales",
-  //       href: "sales",
+  {
+    groupname: "finance",
+    children: [
+      {
+        name: "Accounts",
+        href: "accounts",
+        icon: <FaMoneyCheck />,
+      },
+      {
+        name: "Sales",
+        href: "sales",
 
-  //       icon: <BsFillFileBarGraphFill />,
-  //     },
-  //     {
-  //       name: "Purchase",
-  //       href: "purchase",
-  //       icon: <FaReceipt />,
-  //     },
-  //     {
-  //       name: "Payment Methods",
-  //       href: "payment-methods",
+        icon: <BsFillFileBarGraphFill />,
+      },
+      {
+        name: "Purchase",
+        href: "purchase",
+        icon: <FaReceipt />,
+      },
+      {
+        name: "Payment Methods",
+        href: "payment-methods",
 
-  //       icon: <BsCreditCard />,
-  //     },
-  //   ],
-  // },
+        icon: <BsCreditCard />,
+      },
+    ],
+  },
   {
     groupname: "PHYSICAL ASSERT",
     children: [

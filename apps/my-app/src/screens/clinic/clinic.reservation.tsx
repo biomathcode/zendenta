@@ -37,51 +37,53 @@ function DoctorView({
         </button>
       </div>
       <div className="relative flex flex-col ">
-        <div className=" absolute top-4">
-          <MyDialog
-            isNested={false}
-            content={
-              <div className=" bg-white relative rounded-3xl flex-1 max-h-[94%]">
-                <Drawer.Title className=" py-4 px-8 font-medium text-lg mx-auto ">
-                  Medical Checkup
-                </Drawer.Title>
-                <Drawer.Close
-                  aria-label="Close"
-                  asChild
-                  className=" absolute right-6 top-4"
-                >
-                  <button className=" bg-neutral-200 rounded-full p-1 ">
-                    <MdOutlineKeyboardArrowRight
-                      className=" text-neutral-500"
-                      size={20}
-                    />
-                  </button>
-                </Drawer.Close>
-                <Hr
-                  className=" min-w-full"
-                  direction="horizontal"
-                  size="full"
-                />
+        {name === "Pratik Sharma" && (
+          <div className=" absolute top-4">
+            <MyDialog
+              isNested={false}
+              content={
+                <div className=" bg-white relative rounded-3xl flex-1 max-h-[94%]">
+                  <Drawer.Title className=" py-4 px-8 font-medium text-lg mx-auto ">
+                    Medical Checkup
+                  </Drawer.Title>
+                  <Drawer.Close
+                    aria-label="Close"
+                    asChild
+                    className=" absolute right-6 top-4"
+                  >
+                    <button className=" bg-neutral-200 rounded-full p-1 ">
+                      <MdOutlineKeyboardArrowRight
+                        className=" text-neutral-500"
+                        size={20}
+                      />
+                    </button>
+                  </Drawer.Close>
+                  <Hr
+                    className=" min-w-full"
+                    direction="horizontal"
+                    size="full"
+                  />
 
-                <div className="max-w-md mx-auto p-3">
-                  <p className="text-zinc-600 mb-2">
-                    This component can be used as a replacement for a Dialog on
-                    mobile and tablet devices.
-                  </p>
-                  <div>
-                    <MyDialog isNested={true}>
-                      <button>Open Second Dialog</button>
-                    </MyDialog>
+                  <div className="max-w-md mx-auto p-3">
+                    <p className="text-zinc-600 mb-2">
+                      This component can be used as a replacement for a Dialog
+                      on mobile and tablet devices.
+                    </p>
+                    <div>
+                      <MyDialog isNested={true}>
+                        <button>Open Second Dialog</button>
+                      </MyDialog>
+                    </div>
                   </div>
                 </div>
-              </div>
-            }
-          >
-            <button>
-              <CalendarEventCard />
-            </button>
-          </MyDialog>
-        </div>
+              }
+            >
+              <button>
+                <CalendarEventCard />
+              </button>
+            </MyDialog>
+          </div>
+        )}
 
         {[
           "9am",
@@ -275,9 +277,9 @@ function ClinicReservation() {
               <div className=" text-neutral-400">total appointments</div>
             </div>
             <div className="flex gap-2 items-center">
-              <button className=" px-2 border rounded text-sm py-1 px-2 ">
+              {/* <button className=" px-2 border rounded text-sm py-1 px-2 ">
                 Today
-              </button>
+              </button> */}
               <div className="flex gap-1">
                 <div className="flex gap-2 items-center text-neutral-400">
                   <FaAngleLeft size={20} />

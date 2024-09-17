@@ -16,27 +16,32 @@ import { FaTooth } from "react-icons/fa";
 import { BsCalendarEvent, BsFileText } from "react-icons/bs";
 import { FaArrowRightArrowLeft, FaArrowRightLong } from "react-icons/fa6";
 import {} from "@convex-dev/auth/react";
+import Logo from "@/ui/logo";
+import Image from "next/image";
 
 function Marketing() {
   return (
     <main>
       <header className="px-4 lg:px-6 h-14 flex items-center">
-        <Link className="flex items-center justify-center" href="#">
-          <FaTooth className="h-6 w-6" />
-          <span className="sr-only">DentaSync</span>
-        </Link>
+        <div className="flex gap-2 py-4">
+          <Image src={"/logo.png"} width={30} height={20} alt="Zendenta Logo" />
+
+          <div className="font-bold font-Manrope text-lg">Zendenta</div>
+        </div>
+        <div></div>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
+            href="#features"
           >
             Features
           </Link>
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
+            href="https://github.com/biomathcode/zendenta"
+            target="_blank"
           >
-            Pricing
+            Github
           </Link>
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
@@ -58,7 +63,7 @@ function Marketing() {
           </Link>
         </nav>
       </header>
-      <section className="w-full  py-12 md:py-24 lg:py-32 xl:py-48">
+      <section className="w-full h-screen  py-12 md:py-24 lg:py-32 xl:py-48">
         <div className=" px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
@@ -84,7 +89,10 @@ function Marketing() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+      <section
+        id="features"
+        className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
+      >
         <div className=" px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
             Key Features

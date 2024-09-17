@@ -372,9 +372,10 @@ function DashboardContainer() {
       </Suspense>
       <div className="flex gap-4 flex-wrap">
         <Cashflow />
-        <ExpenseGraph />
+        {/* <ExpenseGraph /> */}
+        <PatientsGraph />
+
         <div className="flex flex-col gap-4">
-          <PatientsGraph />
           <PopularGraph />
         </div>
         <StockGraph />
