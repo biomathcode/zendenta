@@ -62,7 +62,9 @@ function StockContainer() {
           )}
         </TabsContent>
         <TabsContent value="Order Stock">
-          Change your password here.
+          <div className="w-full h-full flex justify-center items-center">
+            <div>No data found</div>
+          </div>
         </TabsContent>
       </Tabs>
     </div>

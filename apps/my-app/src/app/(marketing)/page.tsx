@@ -8,12 +8,19 @@ import {
   BiHeart,
   BiLeftArrow,
   BiRightArrow,
+  BiSolidUser,
   BiUser,
 } from "react-icons/bi";
+import { FcCalendar } from "react-icons/fc";
 import { MdCalendarViewDay } from "react-icons/md";
 import Link from "next/link";
 import { FaTooth } from "react-icons/fa";
-import { BsCalendarEvent, BsFileText } from "react-icons/bs";
+import {
+  BsCalendarEvent,
+  BsFileText,
+  BsFileTextFill,
+  BsFillHeartFill,
+} from "react-icons/bs";
 import { FaArrowRightArrowLeft, FaArrowRightLong } from "react-icons/fa6";
 import {} from "@convex-dev/auth/react";
 import Logo from "@/ui/logo";
@@ -43,18 +50,7 @@ function Marketing() {
           >
             Github
           </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            About
-          </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Contact
-          </Link>
+
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#"
@@ -63,7 +59,7 @@ function Marketing() {
           </Link>
         </nav>
       </header>
-      <section className="w-full h-screen  py-12 md:py-24 lg:py-32 xl:py-48">
+      <section className="w-full   py-12 md:py-24 lg:py-32 xl:py-48">
         <div className=" px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
@@ -82,59 +78,72 @@ function Marketing() {
               >
                 Get Started
               </Link>
-              <button className=" flex gap-2 items-center hover:bg-neutral-300 px-4 rounded border">
-                Contact Us <FaArrowRightLong />
-              </button>
+              <Link
+                href={"https://github.com/biomathcode/zendenta"}
+                target="_blank"
+                className=" flex gap-2 items-center hover:bg-neutral-300 px-4 rounded-2xl border"
+              >
+                Github Repo <FaArrowRightLong />
+              </Link>
             </div>
           </div>
         </div>
       </section>
-      <section
-        id="features"
-        className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
-      >
+      <section>
+        <div className="w-full relative px-10 ">
+          <Image
+            src="/newdashboard.png"
+            width={600}
+            height={600}
+            alt="profile"
+            layout="responsive"
+            className="w-full h-full top-0 left-0 object-cover rounded-2xl"
+          />
+        </div>
+      </section>
+      <section id="features" className="w-full py-12 md:py-24 lg:py-32   ">
         <div className=" px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
-            Key Features
+            Features
           </h2>
-          <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid gap-32 sm:grid-cols-2 md:grid-cols-3">
             <div className="flex flex-col items-center text-center">
-              <BsCalendarEvent className="h-12 w-12 mb-4 text-primary" />
+              <FcCalendar className="h-12 w-12 mb-4 text-primary" />
               <h3 className="text-lg font-bold">Appointment Scheduling</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Effortlessly manage appointments and reduce no-shows
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <BsFileText className="h-12 w-12 mb-4 text-primary" />
+              <BsFileTextFill className="h-12 w-12 mb-4 text-primary bg-n text-indigo-500" />
               <h3 className="text-lg font-bold">Electronic Health Records</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Securely store and access patient records anytime, anywhere
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <BiUser className="h-12 w-12 mb-4 text-primary" />
+              <BiSolidUser className="h-12 w-12 mb-4 text-primary text-teal-700" />
               <h3 className="text-lg font-bold">Patient Portal</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Empower patients with online access to their dental information
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <BiBarChart className="h-12 w-12 mb-4 text-primary" />
+              <BiBarChart className="h-12 w-12 mb-4 text-primary text-green-500" />
               <h3 className="text-lg font-bold">Analytics & Reporting</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Gain insights into your practice with powerful analytics tools
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <BiHeart className="h-12 w-12 mb-4 text-primary" />
+              <BsFillHeartFill className="h-12 w-12 mb-4 text-primary text-red-500" />
               <h3 className="text-lg font-bold">Treatment Planning</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Create and manage comprehensive treatment plans for patients
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <FaTooth className="h-12 w-12 mb-4 text-primary" />
+              <FaTooth className="h-12 w-12 mb-4 text-primary text-blue-500" />
               <h3 className="text-lg font-bold">Dental Charting</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Intuitive digital charting for accurate patient records

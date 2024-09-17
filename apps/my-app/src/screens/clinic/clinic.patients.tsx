@@ -45,7 +45,11 @@ function PatientsContainer() {
             />
           )}
         </TabsContent>
-        <TabsContent value="inactive">Change your password here.</TabsContent>
+        <TabsContent value="inactive">
+          <div className="w-full h-full flex justify-center items-center">
+            <div>No data found</div>
+          </div>
+        </TabsContent>
       </Tabs>
     </div>
   );
