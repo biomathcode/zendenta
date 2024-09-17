@@ -10,6 +10,7 @@ import Hr from "./hr";
 import Label from "./label";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 interface AvatarCardProps {
   name?: string;
@@ -121,7 +122,10 @@ function Header({
           </button>
         </div>
         <Hr direction="vertical" size="xs" />
-        <AvatarCard name={user?.email} role={"Admin"} image={user?.image} />
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        {/* <AvatarCard name={user?.email} role={"Admin"} image={user?.image} /> */}
       </div>
     </header>
   );

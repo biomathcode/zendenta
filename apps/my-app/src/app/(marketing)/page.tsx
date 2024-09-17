@@ -25,6 +25,12 @@ import { FaArrowRightArrowLeft, FaArrowRightLong } from "react-icons/fa6";
 import {} from "@convex-dev/auth/react";
 import Logo from "@/ui/logo";
 import Image from "next/image";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 
 function Marketing() {
   return (
@@ -51,12 +57,12 @@ function Marketing() {
             Github
           </Link>
 
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Login
-          </Link>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </nav>
       </header>
       <section className="w-full   py-12 md:py-24 lg:py-32 xl:py-48">
