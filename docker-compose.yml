@@ -1,0 +1,13 @@
+"version": "3.8"
+
+services:
+  db: 
+    image: postgres:15-alpine
+    restart: always
+    ports: 
+      - 5432:5432
+    environment: 
+      - POSTGRES_USER=${DB_USER_NAME}
+      - POSTGRES_PASSWORD=${DB_USER_PWD}
+      - POSTGRES_DB=zendenta
+      - POSTGRES_HOST_AUTH_METHOD=trust

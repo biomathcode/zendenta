@@ -1,5 +1,6 @@
 {
   "name": "zendenta",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -9,7 +10,9 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish"
+    "release": "turbo run build --filter=docs^... && changeset publish",
+    "start:docker": "docker-compose up",
+    "stop:docker": "docker-compose down"
   },
   "devDependencies": {
     "prettier": "^3.2.5",

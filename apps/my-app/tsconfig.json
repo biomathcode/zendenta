@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts",  "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "convex/tsconfig.json"],
+  "include": ["next-env.d.ts",  "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "convex/tsconfig.json", "src/lib/db.js"],
   "exclude": ["node_modules"]
 }
