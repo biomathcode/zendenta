@@ -1,19 +1,15 @@
 "use client";
 
-import { useAuthActions } from "@convex-dev/auth/react";
 import { useState } from "react";
 
 export default function PasswordReset() {
-  const { signIn } = useAuthActions();
   const [step, setStep] = useState<"forgot" | { email: string }>("forgot");
   return step === "forgot" ? (
     <form
       onSubmit={(event) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-        void signIn("password", formData).then(() =>
-          setStep({ email: formData.get("email") as string })
-        );
+
       }}
     >
       <input name="email" placeholder="Email" type="text" />
@@ -25,7 +21,6 @@ export default function PasswordReset() {
       onSubmit={(event) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-        void signIn("password", formData);
       }}
     >
       <input name="code" placeholder="Code" type="text" />

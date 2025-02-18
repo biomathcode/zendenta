@@ -4,15 +4,13 @@ import CreatePatientsForm from "@/form/createPatients";
 import { CreateDialog } from "@/ui/createdialog";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tab";
-import { TableContainer } from "@/ui/table.type";
-import { useQuery } from "convex/react";
+import { Patient, TableContainer } from "@/ui/table.type";
 import { BiDollarCircle } from "react-icons/bi";
-import { api } from "../../../convex/_generated/api";
 import { Button } from "@/ui/button";
 import Search from "@/ui/search";
 
 function PatientsContainer() {
-  const patients = useQuery(api.patients.get);
+  const patients: Patient[] = [];
   return (
     <div className="flex flex-col gap-5 w-full h-full">
       <Tabs defaultValue="active" className="relative w-full h-full ">

@@ -1,8 +1,7 @@
 import Header from "@/ui/header";
 
 import ClinicReservation from "@/screens/clinic/clinic.reservation";
-import { useQuery } from "convex/react";
-import { api } from "../../../../convex/_generated/api";
+
 
 function Design() {
   return (

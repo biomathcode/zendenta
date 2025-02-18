@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../../globals.css";
-import { ConvexClientProvider } from "@/lib/ConvexClientProvider";
 import Header from "@/ui/header";
 import { NavProvider } from "@/hooks/useNavOpen";
 import NavGroup from "@/ui/navgroup";

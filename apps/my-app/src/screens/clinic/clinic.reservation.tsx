@@ -3,14 +3,13 @@ import { AvatarCard, CalendarEventCard } from "@/ui/card";
 import MyDialog from "@/ui/drawer";
 import Hr from "@/ui/hr";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/ui/tab";
-import { useQuery } from "convex/react";
 import { format } from "date-fns";
 import { BiDotsHorizontal } from "react-icons/bi";
 import { FaAngleLeft, FaAngleRight, FaCalendarCheck } from "react-icons/fa";
 import { MdFilterList, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Drawer } from "vaul";
-import { api } from "../../../convex/_generated/api";
 import { MultiStep } from "@/ui/multistepper";
+import { Patient } from "@/ui/table.type";
 
 //TODO add TimeTicker
 //TODO: add
@@ -229,9 +228,8 @@ function DayView() {
       {slots.map((e) => (
         <div
           key={e}
-          className={` border-r border-t flex justify-center text-sm pt-4 ${
-            e.includes("GMT") ? " w-20 h-24" : " h-32 w-20 "
-          } `}
+          className={` border-r border-t flex justify-center text-sm pt-4 ${e.includes("GMT") ? " w-20 h-24" : " h-32 w-20 "
+            } `}
         >
           {e}
         </div>
@@ -247,7 +245,7 @@ function ClinicReservation() {
   const currentHour = currentDate.getHours();
   const formattedDate = format(currentDate, "EEE,d MMM  yyyy");
 
-  const staff = useQuery(api.staff.get);
+  const staff: Patient[] = []
 
   console.log("staff", staff);
   return (

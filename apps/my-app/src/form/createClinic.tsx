@@ -1,8 +1,6 @@
 "use client";
 import { useForm, SubmitHandler } from "react-hook-form";
-import type Schema from "../../convex/schema";
-import { useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
+
 import toast from "react-hot-toast";
 
 type NewClinic = {
@@ -18,11 +16,9 @@ function CreateClinicForm() {
     formState: { errors },
   } = useForm<NewClinic>();
 
-  const createClinic = useMutation(api.clinic.createClinic);
 
   const onSubmit: SubmitHandler<NewClinic> = async (data) => {
     try {
-      await createClinic(data);
       toast.success("Clinic added");
     } catch (e) {
       console.log("something went wrong", e);

@@ -4,10 +4,8 @@ import Hr from "@/ui/hr";
 import Search from "@/ui/search";
 import Spacer from "@/ui/spacer";
 import { TableContainer } from "@/ui/table.type";
-import { useQuery } from "convex/react";
 import Link from "next/link";
 import { BiFilter, BiPlus } from "react-icons/bi";
-import { api } from "../../../convex/_generated/api";
 
 function PeripheralsContainer() {
   return (

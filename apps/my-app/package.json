@@ -13,10 +13,6 @@
     "test:coverage": "vitest run --coverage --coverage.reporter=text"
   },
   "dependencies": {
-    "@auth/core": "^0.34.2",
-    "@clerk/clerk-react": "^5.9.0",
-    "@clerk/nextjs": "^5.5.3",
-    "@convex-dev/auth": "^0.0.61",
     "@hookform/resolvers": "^3.9.0",
     "@internationalized/date": "^3.5.5",
     "@radix-ui/react-dialog": "^1.1.1",
@@ -31,9 +27,6 @@
     "@tanstack/react-table": "^8.20.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "convex": "^1.15.0",
-    "convex-ents": "^0.11.0",
-    "convex-helpers": "^0.1.58",
     "date-fns": "^3.6.0",
     "jose": "^5.9.2",
     "next": "14.2.7",

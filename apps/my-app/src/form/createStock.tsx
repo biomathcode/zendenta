@@ -10,8 +10,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/ui/form";
-import { useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
 import { z } from "zod";
 import { MultiStep } from "@/ui/multistepper";
 import { BsBoxSeam } from "react-icons/bs";
@@ -34,36 +32,12 @@ const formSchema = z.object({
 });
 
 function CreateStockForm() {
-  const createDocument = useMutation(api.stocks.createStocks);
-  const generateUploadUrl = useMutation(api.documents.generateUploadUrl);
-
   // Handle form submission
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     let storageId;
-    if (values.image) {
-      const url = await generateUploadUrl();
-      const result = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": values.image.type },
-        body: values.image,
-      });
-      const response = await result.json();
-      storageId = response.storageId;
-    }
 
-    // Create the stock entry in the system
-    await createDocument({
-      name: values.name,
-      image: storageId,
-      categories: values.categories,
-      sku: values.sku,
-      vendor: values.vendor,
-      stock: values.stock,
-      status: values.status,
-      quantity: values.quantity,
-      assertValue: values.assertValue,
-    });
+
   }
 
   const form = useForm<z.infer<typeof formSchema>>({

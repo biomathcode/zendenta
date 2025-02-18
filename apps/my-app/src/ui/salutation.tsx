@@ -2,14 +2,6 @@
 
 import React from "react";
 import { format } from "date-fns";
-import {
-  Authenticated,
-  Unauthenticated,
-  useConvexAuth,
-  useQuery,
-} from "convex/react";
-import { api } from "../../convex/_generated/api";
-import { fetchQuery, preloadQuery } from "convex/nextjs";
 import { Skeleton } from "./skeleton";
 
 function UserGreeting() {
@@ -29,20 +21,16 @@ function UserGreeting() {
   // Format the current date
   const formattedDate = format(currentDate, "EEEE, MMMM d, yyyy");
 
-  const user = useQuery(api.users.viewer);
 
-  console.log(user);
-
+  const user = {
+    email: 'Pratik Sharma'
+  }
   return (
     <div className="flex flex-col gap-2 ">
-      <Authenticated>
-        <h1 className="text-lg font-bold ">
-          {salutation}, {user?.email}!
-        </h1>
-      </Authenticated>
-      <Unauthenticated>
-        <Skeleton className=" w-32 h-2" />
-      </Unauthenticated>
+      <h1 className="text-lg font-bold ">
+        {salutation}, {user?.email}!
+      </h1>
+      <Skeleton className=" w-32 h-2" />
 
       <p className="text-gray-500">{formattedDate}</p>
     </div>

@@ -10,8 +10,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/ui/form";
-import { useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
 import { z } from "zod";
 import { MultiStep } from "@/ui/multistepper";
 import { BsPersonAdd } from "react-icons/bs";
@@ -31,33 +29,14 @@ const formSchema = z.object({
 });
 
 function CreatePatientsForm() {
-  const createDocument = useMutation(api.patients.createPatient);
-  const generateUploadUrl = useMutation(api.documents.generateUploadUrl);
 
   // Handle form submission
   async function onSubmit(values: z.infer<typeof formSchema>) {
     let storageId;
-    if (values.image) {
-      const url = await generateUploadUrl();
-      const result = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": values.image.type },
-        body: values.image,
-      });
-      const response = await result.json();
-      storageId = response.storageId;
-    }
+
 
     // Create the doctor entry in the system
-    await createDocument({
-      name: values.name,
-      email: values.email,
-      registered: values.registered,
-      address: values.address,
-      phone: values.phone,
-      image: storageId,
-      lastVisited: values.lastVisited,
-    });
+
   }
 
   const form = useForm<z.infer<typeof formSchema>>({

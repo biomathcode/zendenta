@@ -5,16 +5,14 @@ import Hr from "@/ui/hr";
 import Spacer from "@/ui/spacer";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tab";
-import { TableContainer } from "@/ui/table.type";
-import { useQuery } from "convex/react";
-import { api } from "../../../convex/_generated/api";
+import { Stock, TableContainer } from "@/ui/table.type";
 import Search from "@/ui/search";
 import { CreateDialog } from "@/ui/createdialog";
 import { PiPlusCircle } from "react-icons/pi";
 import CreateStockForm from "@/form/createStock";
 
 function StockContainer() {
-  const stocks = useQuery(api.stocks.getStocks);
+  const stocks: Stock[] = []
   return (
     <div className="flex flex-col gap-2 w-full h-full">
       <div className="flex gap-4 min-h-fit">
@@ -41,7 +39,7 @@ function StockContainer() {
           {stocks && (
             <TableContainer
               dataType="Stock"
-              data={stocks as any}
+              data={stocks}
               header={
                 <div className="flex gap-2 w-full justify-between">
                   <Search />

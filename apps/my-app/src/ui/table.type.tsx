@@ -13,7 +13,7 @@ import { CreateDialog } from "./createdialog";
 import CreateStockForm from "@/form/createClinic";
 
 // Define the types for the data formats
-type Person = {
+export type Person = {
   _id: string;
   name: string;
   contact: string;
@@ -25,7 +25,7 @@ type Person = {
   working_days: number[]; // Representing days as numbers (1 = Monday, etc.)
 };
 
-type Patient = {
+export type Patient = {
   _id: string;
   _creationTime: number;
   name: string;
@@ -37,7 +37,7 @@ type Patient = {
   lastVisited: string;
 };
 
-type Stock = {
+export type Stock = {
   name: string;
   categories: "Antiseptic" | "Antibiotic" | "Steroid";
   sku: string;
@@ -48,7 +48,7 @@ type Stock = {
   clinicId: string;
 };
 
-type Peripherals = {
+export type Peripherals = {
   productname: string;
   productimage: string;
   assignedTo: string; // vendor
@@ -67,7 +67,7 @@ type Peripherals = {
 };
 
 // Enum to define the data type
-type DataType = "Patient" | "Staff" | "Stock" | "Peripherals";
+export type DataType = "Patient" | "Staff" | "Stock" | "Peripherals";
 
 const columnHelperPerson = createColumnHelper<Person>();
 const columnHelperPatient = createColumnHelper<Patient>();

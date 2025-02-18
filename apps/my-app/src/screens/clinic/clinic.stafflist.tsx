@@ -11,15 +11,13 @@ import Spacer from "@/ui/spacer";
 import Stats from "@/ui/stats";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tab";
-import { TableContainer } from "@/ui/table.type";
-import { useQuery } from "convex/react";
+import { Patient, TableContainer } from "@/ui/table.type";
 import { BiDollarCircle } from "react-icons/bi";
-import { api } from "../../../convex/_generated/api";
 
 function StaffListContainer() {
-  const staff = useQuery(api.staff.get);
 
-  console.log(staff);
+  const staff: Patient[] = []
+
   return (
     <div className="flex flex-col gap-5 w-full h-full">
       <Tabs defaultValue="Doctor" className="relative w-full h-full">
@@ -33,7 +31,7 @@ function StaffListContainer() {
           className=" relative before:absolute before:w-full "
           value="Doctor"
         >
-          {staff && (
+          {staff.length > 0 ? (
             <TableContainer
               dataType="Staff"
               data={staff}
@@ -62,7 +60,7 @@ function StaffListContainer() {
                 </div>
               }
             />
-          )}
+          ) : <div> Not Staff found </div>}
         </TabsContent>
         <TabsContent value="General">
           <div className="w-full h-full flex justify-center items-center">

@@ -8,9 +8,6 @@ import { IoSearch } from "react-icons/io5";
 import { PiPlus, PiPlusCircle } from "react-icons/pi";
 import Hr from "./hr";
 import Label from "./label";
-import { useQuery } from "convex/react";
-import { api } from "../../convex/_generated/api";
-import { SignedIn, UserButton } from "@clerk/nextjs";
 
 interface AvatarCardProps {
   name?: string;
@@ -66,21 +63,23 @@ function Header({
   type,
 }: {
   type:
-    | "Dashboard"
-    | "Reservations"
-    | "Patients"
-    | "Treatments"
-    | "StaffList"
-    | "Account"
-    | "Sales"
-    | "Purchase"
-    | "Payment Methods"
-    | "Stocks"
-    | "Peripherals"
-    | "Report"
-    | "Support";
+  | "Dashboard"
+  | "Reservations"
+  | "Patients"
+  | "Treatments"
+  | "StaffList"
+  | "Account"
+  | "Sales"
+  | "Purchase"
+  | "Payment Methods"
+  | "Stocks"
+  | "Peripherals"
+  | "Report"
+  | "Support";
 }) {
-  const user = useQuery(api.users.viewer);
+  const user = {
+    email: 'sharma.pratik2016@gmail.com'
+  }
 
   console.log(user);
   return (
@@ -122,9 +121,7 @@ function Header({
           </button>
         </div>
         <Hr direction="vertical" size="xs" />
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
+
         {/* <AvatarCard name={user?.email} role={"Admin"} image={user?.image} /> */}
       </div>
     </header>

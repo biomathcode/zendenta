@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import { ConvexClientProvider } from "@/lib/ConvexClientProvider";
 import { NavProvider } from "@/hooks/useNavOpen";
 import NavGroup from "@/ui/navgroup";
 import RootLayout from "../dashboard/layout";
