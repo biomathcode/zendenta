@@ -4,6 +4,8 @@ I have to so this to get the data
 
 this will get the uses detail for me 
 
+i have to do this 
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
