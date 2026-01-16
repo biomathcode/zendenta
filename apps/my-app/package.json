@@ -35,7 +35,7 @@
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.39.3",
     "jose": "^5.9.2",
-    "next": "14.2.7",
+    "next": "14.2.35",
     "next-nprogress-bar": "^2.3.13",
     "next-themes": "^0.3.0",
     "nextjs-progressbar": "^0.0.16",
